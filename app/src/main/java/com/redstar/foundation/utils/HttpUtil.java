@@ -126,7 +126,8 @@ public class HttpUtil {
         //添加公用参数
         params = initParams(params);
         //解析Type
-        Type type = CommonUtil.getType(Result.class, List.class, clazz);
+        Type type = CommonUtil.getType(Result.class, CommonUtil.getType(List.class, clazz));
+//        Type type = CommonUtil.getType(Result.class, List.class, clazz);
         //加密，解密
 
         //执行请求

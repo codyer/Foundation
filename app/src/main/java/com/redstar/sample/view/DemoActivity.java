@@ -7,13 +7,15 @@ import com.redstar.foundation.R;
 import com.redstar.foundation.databinding.DemoActivityBinding;
 import com.redstar.foundation.view.BaseActivity;
 import com.redstar.sample.viewmodel.impl.Demo3LayerViewModel;
+import com.redstar.sample.viewmodel.impl.Demo4LayerViewModel;
 
 
 /**
  * 主要进行生命周期管理以及绑定和属性设置
  */
 public class DemoActivity extends BaseActivity {
-    private Demo3LayerViewModel viewModel;
+    private Demo3LayerViewModel viewModel3;
+    private Demo4LayerViewModel viewModel4;
     private DemoActivityBinding binding;
 
     @Override
@@ -28,20 +30,24 @@ public class DemoActivity extends BaseActivity {
         /**
          * 创建ViewModel
          */
-        viewModel = new Demo3LayerViewModel(TAG);
+        viewModel3 = new Demo3LayerViewModel(TAG);
+        viewModel4 = new Demo4LayerViewModel(TAG);
 
         /**
          * ViewModel生效
          */
-        binding.setVm(viewModel);
+        binding.setVm3(viewModel3);
+        binding.setVm4(viewModel4);
 
 
-        viewModel.onCreate();
+        viewModel3.onCreate();
+        viewModel4.onCreate();
     }
 
     @Override
     protected void onDestroy() {
-        viewModel.onDestroy();
+        viewModel3.onDestroy();
+        viewModel4.onDestroy();
         super.onDestroy();
     }
 }

@@ -2,7 +2,6 @@ package com.redstar.sample.presenter.impl;
 
 
 import com.redstar.foundation.common.Callback;
-import com.redstar.foundation.utils.HttpUtil;
 import com.redstar.sample.model.UserModel;
 import com.redstar.sample.model.bean.User;
 import com.redstar.sample.model.impl.UserModelImpl;
@@ -30,17 +29,20 @@ public class UserPresenterImpl implements UserPresenter {
 
     @Override
     public boolean login(Object tag, final Callback<User> callback) {
-        callback.onBegin(tag);
-        mUserModel.getListUser(tag, new HttpUtil.Callback<List<User>>() {
-
+        mUserModel.getListUser(tag, new Callback<List<User>>() {
             @Override
-            public void onSuccess(List<User> data) {
-                callback.onSuccess(data.get(0));
+            public void onBegin(Object obj) {
+                callback.onBegin(obj);
             }
 
             @Override
-            public void onFailure(String err) {
-                callback.onFailure(err);
+            public void onSuccess(List<User> data) {
+                callback.onSuccess(data.get(data.size()-1));
+            }
+
+            @Override
+            public void onFailure(Object obj) {
+                callback.onFailure(obj);
             }
         });
         callback.onProgress(100,100);

@@ -2,8 +2,10 @@
 
     <data>
         <import type="com.redstar.sample.viewmodel.impl.Demo3LayerViewModel" />
+        <import type="com.redstar.sample.viewmodel.impl.Demo4LayerViewModel" />
         <!--<import type="android.databinding.ObservableMap" />-->
-        <variable name="vm" type="Demo3LayerViewModel" />
+        <variable name="vm3" type="Demo3LayerViewModel" />
+        <variable name="vm4" type="Demo4LayerViewModel" />
         <!--<variable name="plainUser" type="PlainUser" />-->
         <!--<variable name="mapUser" type="ObservableMap&lt;String, Object>" />-->
     </data>
@@ -17,14 +19,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center">
     <TextView
-        android:text="@{vm.name}"
+        android:text="@{vm3.name}"
         android:layout_width="match_parent"
-        android:layout_height="60dp" />
+        android:layout_height="60dp"
+        android:layout_gravity="center"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{vm.onLoginClick}"
-        android:text="Login" />
+        android:onClick="@{vm3.onLoginClick}"
+        android:text="Login 3" />
+
+    <TextView
+        android:text="@{vm4.name}"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{vm4.onLoginClick}"
+        android:text="Login 4" />
 </LinearLayout>
 </layout>

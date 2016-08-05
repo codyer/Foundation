@@ -33,7 +33,8 @@ public class Demo4LayerViewModel extends ViewModel implements DemoViewListener {
      * 具体业务处理交由哪个实现来处理，可以根据业务需要进行切换
      * 不应该由View决定交由谁处理
      */
-    public Demo4LayerViewModel() {
+    public Demo4LayerViewModel(Object tag) {
+        mTag = tag;
         mUserPresenter = new UserPresenterImpl();
         mShopPresenter = new ShopPresenterImpl();
     }
@@ -41,7 +42,7 @@ public class Demo4LayerViewModel extends ViewModel implements DemoViewListener {
     @Override
     public void onLoginClick(View view) {
         if (mUserPresenter.check()){
-            mUserPresenter.login(view.getTag(),new Callback<User>(){
+            mUserPresenter.login(mTag,new Callback<User>(){
                 @Override
                 public void onSuccess(User user) {
                     super.onSuccess(user);
@@ -50,7 +51,7 @@ public class Demo4LayerViewModel extends ViewModel implements DemoViewListener {
             });
         }
 
-        mShopPresenter.getShop(view.getTag(),new Callback<Shop>(){
+        mShopPresenter.getShop(mTag,new Callback<Shop>(){
             @Override
             public void onSuccess(Shop obj) {
                 super.onSuccess(obj);
@@ -72,6 +73,7 @@ public class Demo4LayerViewModel extends ViewModel implements DemoViewListener {
 
     @Override
     public void onDestroy() {
-        mUserPresenter.cancel("UserViewModel");
+        mUserPresenter.cancel(mTag);
+        mShopPresenter.cancel(mTag);
     }
 }

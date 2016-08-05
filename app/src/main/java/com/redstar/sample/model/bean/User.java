@@ -1,5 +1,7 @@
 package com.redstar.sample.model.bean;
 
+import java.util.List;
+
 /**
  * Created by cody.yi on 2016/8/4.
  */
@@ -8,6 +10,25 @@ public class User {
     private String name;
     private String email;
     private String gender;
+    private Shop shop;
+    private List<Shop> shopList;
+
+    public List<Shop> getShopList() {
+        return shopList;
+    }
+
+    public void setShopList(List<Shop> shopList) {
+        this.shopList = shopList;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
     public int getId() {
         return id;
     }

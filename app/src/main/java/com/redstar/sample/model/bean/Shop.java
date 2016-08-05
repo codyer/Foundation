@@ -5,6 +5,16 @@ package com.redstar.sample.model.bean;
  */
 public class Shop {
 
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String shopName;
 
     public String getShopName() {
@@ -18,7 +28,8 @@ public class Shop {
     @Override
     public String toString() {
         return "Shop{" +
-                "shopName='" + shopName + '\'' +
+                "id=" + id +
+                ", shopName='" + shopName + '\'' +
                 '}';
     }
 }
