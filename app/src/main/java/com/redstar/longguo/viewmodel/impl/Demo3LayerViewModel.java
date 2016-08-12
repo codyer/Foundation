@@ -1,6 +1,5 @@
 package com.redstar.longguo.viewmodel.impl;
 
-import android.content.Context;
 import android.content.Intent;
 import android.databinding.ObservableField;
 import android.view.View;
@@ -24,7 +23,6 @@ import java.util.List;
  * Created by cody.yi on 2016/8/4.
  */
 public class Demo3LayerViewModel extends ViewModel implements DemoViewListener {
-    private Context mContext;
     /**
      * 绑定对应UI属性
      */
@@ -41,6 +39,7 @@ public class Demo3LayerViewModel extends ViewModel implements DemoViewListener {
      * 不应该由View决定交由谁处理
      */
     public Demo3LayerViewModel(BaseActivity activity) {
+        super(activity);
         mTag = activity.TAG_LOG;
         mContext = activity;
         mUserModel = new UserModelImpl();
