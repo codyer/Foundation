@@ -44,10 +44,17 @@ public class DemoActivity extends BaseActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        viewModel3.onPause();
+        viewModel4.onPause();
+    }
+
+    @Override
     protected void onDestroy() {
+        super.onDestroy();
         viewModel3.onDestroy();
         viewModel4.onDestroy();
-        super.onDestroy();
     }
 
 }
