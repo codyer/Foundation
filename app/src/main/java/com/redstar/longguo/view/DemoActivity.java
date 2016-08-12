@@ -9,8 +9,6 @@ import com.redstar.longguo.view.base.BaseActivity;
 import com.redstar.longguo.viewmodel.impl.Demo3LayerViewModel;
 import com.redstar.longguo.viewmodel.impl.Demo4LayerViewModel;
 
-
-
 /**
  * 主要进行生命周期管理以及绑定和属性设置
  */
@@ -31,8 +29,8 @@ public class DemoActivity extends BaseActivity {
         /**
          * 创建ViewModel
          */
-        viewModel3 = new Demo3LayerViewModel(TAG_LOG);
-        viewModel4 = new Demo4LayerViewModel(TAG_LOG);
+        viewModel3 = new Demo3LayerViewModel(this);
+        viewModel4 = new Demo4LayerViewModel(this);
 
         /**
          * ViewModel生效

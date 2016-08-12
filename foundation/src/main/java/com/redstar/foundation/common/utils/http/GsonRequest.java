@@ -42,9 +42,15 @@ public class GsonRequest<T> extends Request<T> {
         mParams = params;
     }
 
+    // TODO add token here
+    @Override
+    public Map<String, String> getHeaders() throws AuthFailureError {
+        return super.getHeaders();
+    }
+
     @Override
     protected Map<String, String> getParams() throws AuthFailureError {
-        return mParams;
+        return mParams == null ? super.getParams() : mParams;
     }
 
     @Override

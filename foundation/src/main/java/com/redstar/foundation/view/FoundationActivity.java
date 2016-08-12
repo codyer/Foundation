@@ -8,7 +8,7 @@ public class FoundationActivity extends AppCompatActivity {
     /**
      * Log tag
      */
-    protected static String TAG_LOG = null;
+    public static String TAG_LOG = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

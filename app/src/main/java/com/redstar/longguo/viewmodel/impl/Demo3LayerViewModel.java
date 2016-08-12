@@ -1,5 +1,7 @@
 package com.redstar.longguo.viewmodel.impl;
 
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.ObservableField;
 import android.view.View;
 
@@ -12,6 +14,8 @@ import com.redstar.longguo.model.bean.Shop;
 import com.redstar.longguo.model.bean.User;
 import com.redstar.longguo.model.impl.ShopModelImpl;
 import com.redstar.longguo.model.impl.UserModelImpl;
+import com.redstar.longguo.view.activity.MainActivity;
+import com.redstar.longguo.view.base.BaseActivity;
 import com.redstar.longguo.viewmodel.listener.DemoViewListener;
 
 import java.util.List;
@@ -20,6 +24,7 @@ import java.util.List;
  * Created by cody.yi on 2016/8/4.
  */
 public class Demo3LayerViewModel extends ViewModel implements DemoViewListener {
+    private Context mContext;
     /**
      * 绑定对应UI属性
      */
@@ -35,8 +40,9 @@ public class Demo3LayerViewModel extends ViewModel implements DemoViewListener {
      * 具体业务处理交由哪个实现来处理，可以根据业务需要进行切换
      * 不应该由View决定交由谁处理
      */
-    public Demo3LayerViewModel(Object tag) {
-        mTag = tag;
+    public Demo3LayerViewModel(BaseActivity activity) {
+        mTag = activity.TAG_LOG;
+        mContext = activity;
         mUserModel = new UserModelImpl();
         mShopModel = new ShopModelImpl();
     }
@@ -61,6 +67,9 @@ public class Demo3LayerViewModel extends ViewModel implements DemoViewListener {
                 ToastUtil.showToast(obj.toString());
             }
         });
+
+        Intent intent = new Intent(mContext, MainActivity.class);
+        mContext.startActivity(intent);
     }
 
     @Override

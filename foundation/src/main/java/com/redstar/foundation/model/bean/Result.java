@@ -26,10 +26,16 @@ public class Result<T> {
     }
 
     public String getCode() {
+        if (code == null){
+            return "-1";
+        }
         return code;
     }
 
     public String getMessage() {
+        if (message == null){
+            return "no message!";
+        }
         return message;
     }
 

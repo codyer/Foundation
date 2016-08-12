@@ -41,5 +41,6 @@
         android:layout_height="wrap_content"
         android:onClick="@{vm4.onLoginClick}"
         android:text="Login 4" />
+
 </LinearLayout>
 </layout>

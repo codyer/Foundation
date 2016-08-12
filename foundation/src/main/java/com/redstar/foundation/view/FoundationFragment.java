@@ -7,7 +7,7 @@ public class FoundationFragment extends Fragment {
     /**
      * Log tag
      */
-    protected static String TAG_LOG = null;
+    public static String TAG_LOG = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

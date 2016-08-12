@@ -9,17 +9,16 @@ import android.widget.ImageView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.redstar.foundation.FoundationApplication;
+import com.redstar.foundation.common.Constant;
+import com.redstar.foundation.common.utils.http.HttpClient;
+import com.redstar.foundation.common.utils.http.HttpConnectException;
+import com.redstar.foundation.model.bean.Result;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.redstar.foundation.FoundationApplication;
-import com.redstar.foundation.common.Constant;
-import com.redstar.foundation.common.utils.http.HttpConnectException;
-import com.redstar.foundation.common.utils.http.HttpClient;
-import com.redstar.foundation.model.bean.Result;
 
 /**
  * 管理所有数据，对应用提供一致的数据接口，隐藏数据来源
@@ -151,7 +150,7 @@ public class HttpUtil {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        callback.onFailure(error.getMessage());
+                        callback.onFailure(error.toString());
                     }
                 });
     }
@@ -211,7 +210,7 @@ public class HttpUtil {
                 }, maxWidth, maxHeight, scaleType, decodeConfig,
                 new Response.ErrorListener() {
                     public void onErrorResponse(VolleyError error) {
-                        callback.onFailure(error.getMessage());
+                        callback.onFailure(error.toString());
                     }
                 });
     }
@@ -317,7 +316,7 @@ public class HttpUtil {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        callback.onFailure(error.getMessage());
+                        callback.onFailure(error.toString());
                     }
                 });
     }
@@ -375,7 +374,7 @@ public class HttpUtil {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        callback.onFailure(error.getMessage());
+                        callback.onFailure(error.toString());
                     }
                 });
     }
