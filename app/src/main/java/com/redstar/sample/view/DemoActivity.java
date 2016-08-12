@@ -3,11 +3,12 @@ package com.redstar.sample.view;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 
-import com.redstar.foundation.R;
-import com.redstar.foundation.databinding.DemoActivityBinding;
-import com.redstar.foundation.view.BaseActivity;
+import com.redstar.sample.R;
+import com.redstar.sample.databinding.DemoActivityBinding;
+import com.redstar.sample.view.base.BaseActivity;
 import com.redstar.sample.viewmodel.impl.Demo3LayerViewModel;
 import com.redstar.sample.viewmodel.impl.Demo4LayerViewModel;
+
 
 
 /**
@@ -30,8 +31,8 @@ public class DemoActivity extends BaseActivity {
         /**
          * 创建ViewModel
          */
-        viewModel3 = new Demo3LayerViewModel(TAG);
-        viewModel4 = new Demo4LayerViewModel(TAG);
+        viewModel3 = new Demo3LayerViewModel(TAG_LOG);
+        viewModel4 = new Demo4LayerViewModel(TAG_LOG);
 
         /**
          * ViewModel生效
@@ -50,4 +51,5 @@ public class DemoActivity extends BaseActivity {
         viewModel4.onDestroy();
         super.onDestroy();
     }
+
 }

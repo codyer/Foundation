@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.redstar.foundation">
+          package="com.redstar.sample">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -12,18 +12,30 @@
     <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
-        android:name="com.redstar.sample.DemoApp"
+        android:name=".DemoApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.redstar.sample.view.DemoActivity">
+        <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.personal.PersonalInformationActivity">
+        </activity>
+        <activity android:name=".view.activity.personal.PersonalHomePageQrCodeActivity">
+        </activity>
+        <activity android:name=".view.activity.personal.SelfIntroductionActivity">
+        </activity>
+        <activity android:name=".view.activity.personal.ChangePhoneNumberActivity">
+        </activity>
+        <activity android:name=".view.activity.personal.ChangeNickNameActivity">
+        </activity>
+        <activity android:name=".view.activity.CommentDetailActivity">
         </activity>
     </application>
 

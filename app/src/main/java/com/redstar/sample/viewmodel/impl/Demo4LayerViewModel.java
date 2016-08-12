@@ -3,9 +3,6 @@ package com.redstar.sample.viewmodel.impl;
 import android.databinding.ObservableField;
 import android.view.View;
 
-import com.redstar.foundation.common.Callback;
-import com.redstar.foundation.utils.ToastUtil;
-import com.redstar.foundation.viewmodel.ViewModel;
 import com.redstar.sample.model.bean.Shop;
 import com.redstar.sample.model.bean.User;
 import com.redstar.sample.presenter.ShopPresenter;
@@ -13,6 +10,10 @@ import com.redstar.sample.presenter.UserPresenter;
 import com.redstar.sample.presenter.impl.ShopPresenterImpl;
 import com.redstar.sample.presenter.impl.UserPresenterImpl;
 import com.redstar.sample.viewmodel.listener.DemoViewListener;
+
+import com.redstar.foundation.common.Callback;
+import com.redstar.foundation.common.utils.ToastUtil;
+import com.redstar.foundation.viewmodel.ViewModel;
 
 /**
  * Created by cody.yi on 2016/8/4.

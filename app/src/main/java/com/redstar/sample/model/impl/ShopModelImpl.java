@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.common.Constant;
-import com.redstar.foundation.utils.HttpUtil;
+import com.redstar.foundation.common.utils.HttpUtil;
 import com.redstar.sample.model.ShopModel;
 import com.redstar.sample.model.bean.Shop;
 

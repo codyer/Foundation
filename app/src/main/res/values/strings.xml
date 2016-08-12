@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">Foundation</string>
+    <string name="app_name">龙果</string>
+
+    <!--登录-->
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <string name="register_new">注册新账户</string>
+    <string name="lost_pwd">忘记密码？</string>
+    <string name="input_phone">请输入手机号</string>
+    <string name="input_pwd">请输入密码</string>
+    <string name="pwd_invalid">密码必须是数字或者字母</string>
+    <string name="pwd_error">两次密码输入不一致，请重新输入</string>
+
+
+    <!--main tab names-->
+    <string name="chat">沟通</string>
+    <string name="task">任务</string>
+    <string name="order">订单</string>
+    <string name="manager">管理</string>
+    <string name="personal">个人</string>
+
 </resources>

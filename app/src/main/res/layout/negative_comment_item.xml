@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="negativeComment"
+            type="com.redstar.sample.view.fragment.task.viewmodel.NegativeCommentItem"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="222px"
+        android:orientation="horizontal">
+
+        <com.redstar.foundation.view.widget.AvatarView
+            android:id="@+id/portrait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/portrait2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="false"
+                    android:layout_centerVertical="true"
+                    android:text="@{negativeComment.name}"/>
+
+                <Button
+                    android:id="@+id/negativeComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="差评"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="预约时间"/>
+
+                    <TextView
+                        android:id="@+id/reservationTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{negativeComment.reservationTime}"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/checkDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="查看详情"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/right_arrow"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

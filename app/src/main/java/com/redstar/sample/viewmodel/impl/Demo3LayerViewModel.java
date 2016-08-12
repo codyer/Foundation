@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 import android.view.View;
 
 import com.redstar.foundation.common.Callback;
-import com.redstar.foundation.utils.ToastUtil;
+import com.redstar.foundation.common.utils.ToastUtil;
 import com.redstar.foundation.viewmodel.ViewModel;
 import com.redstar.sample.model.ShopModel;
 import com.redstar.sample.model.UserModel;

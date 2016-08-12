@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="reservation"
+            type="com.redstar.sample.view.fragment.task.viewmodel.ReservationItem"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="222px"
+        android:orientation="horizontal"
+        android:clickable="false">
+
+        <com.redstar.foundation.view.widget.AvatarView
+            android:id="@+id/portrait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/portrait2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="false"
+                    android:layout_centerVertical="true"
+                    android:text="@{reservation.name}"/>
+
+                <Button
+                    android:id="@+id/nonArrival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="未到店"/>
+
+                <Button
+                    android:id="@+id/arrival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/nonArrival"
+                    android:layout_toStartOf="@+id/nonArrival"
+                    android:text="已到店"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预约时间"/>
+
+                <TextView
+                    android:id="@+id/reservationTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{reservation.reservationTime}"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

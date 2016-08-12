@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="livePlan"
+            type="com.redstar.sample.view.fragment.task.viewmodel.LivePlanItem"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/live_plan_background"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="”谈软装设计的重要性“"
+                android:id="@+id/textView11"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/7月14号 12:00/"
+                android:id="@+id/textView12"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/live_portrait_background">
+
+                <com.redstar.foundation.view.widget.AvatarView
+                    android:id="@+id/portrait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/live_portrait"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Panl lo"
+                    android:id="@+id/name"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关注人数："
+                        android:singleLine="false"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6666"
+                        android:id="@+id/followNum"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/reservationTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开始时间"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="false"
+                    android:layout_centerVertical="true"
+                    android:text="2016-01-01 16:00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <Button
+                    android:id="@+id/readyGo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="即将开始"/>
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="结束时间"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="false"
+                    android:layout_centerVertical="true"
+                    android:text="2016-01-01 16:00"
+                    android:id="@+id/textView15"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

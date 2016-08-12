@@ -2,7 +2,7 @@ package com.redstar.sample.model.impl;
 
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.common.Constant;
-import com.redstar.foundation.utils.HttpUtil;
+import com.redstar.foundation.common.utils.HttpUtil;
 import com.redstar.sample.model.UserModel;
 import com.redstar.sample.model.bean.User;
 

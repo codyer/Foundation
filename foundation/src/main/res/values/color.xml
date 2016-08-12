@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--action sheet-->
+    <color name="trans">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="alertDialogLine">#c6c6c6</color>
+    <color name="actionSheetBlue">#037BFF</color>
+    <color name="actionSheetRed">#FD4A2E</color>
+    <color name="actionSheetGray">#8F8F8F</color>
+
+</resources>
