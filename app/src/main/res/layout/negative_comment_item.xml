@@ -5,7 +5,7 @@
 
         <variable
             name="negativeComment"
-            type="com.redstar.sample.view.fragment.task.viewmodel.NegativeCommentItem"/>
+            type="com.redstar.longguo.view.fragment.task.viewmodel.NegativeCommentItem"/>
     </data>
 
     <LinearLayout

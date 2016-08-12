@@ -18,7 +18,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.redstar.sample.view.fragment.PersonalFragment"
+        tools:context="com.redstar.longguo.view.fragment.PersonalFragment"
         android:orientation="vertical">
 
         <RelativeLayout

@@ -1,8 +1,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="com.redstar.sample.viewmodel.impl.Demo3LayerViewModel" />
-        <import type="com.redstar.sample.viewmodel.impl.Demo4LayerViewModel" />
+        <import type="com.redstar.longguo.viewmodel.impl.Demo3LayerViewModel" />
+        <import type="com.redstar.longguo.viewmodel.impl.Demo4LayerViewModel" />
         <!--<import type="android.databinding.ObservableMap" />-->
         <variable name="vm3" type="Demo3LayerViewModel" />
         <variable name="vm4" type="Demo4LayerViewModel" />

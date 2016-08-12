@@ -5,7 +5,7 @@
 
         <variable
             name="livePlan"
-            type="com.redstar.sample.view.fragment.task.viewmodel.LivePlanItem"/>
+            type="com.redstar.longguo.view.fragment.task.viewmodel.LivePlanItem"/>
     </data>
 
     <LinearLayout

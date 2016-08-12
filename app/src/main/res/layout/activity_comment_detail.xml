@@ -3,11 +3,11 @@
     <data>
         <variable
             name="reservation"
-            type="com.redstar.sample.view.fragment.task.viewmodel.ReservationItem"/>
+            type="com.redstar.longguo.view.fragment.task.viewmodel.ReservationItem"/>
 
         <variable
             name="handlers"
-            type="com.redstar.sample.view.activity.EventHandler"/>
+            type="com.redstar.longguo.view.activity.EventHandler"/>
     </data>
 
     <LinearLayout

@@ -6,7 +6,7 @@
             name="handlers"
             type="EventHandler"/>
 
-        <import type="com.redstar.sample.view.activity.EventHandler"/>
+        <import type="com.redstar.longguo.view.activity.EventHandler"/>
     </data>
 
     <LinearLayout
