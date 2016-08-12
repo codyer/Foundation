@@ -9,6 +9,7 @@ import com.redstar.longguo.presenter.ShopPresenter;
 import com.redstar.longguo.presenter.UserPresenter;
 import com.redstar.longguo.presenter.impl.ShopPresenterImpl;
 import com.redstar.longguo.presenter.impl.UserPresenterImpl;
+import com.redstar.longguo.view.base.BaseActivity;
 import com.redstar.longguo.viewmodel.listener.DemoViewListener;
 
 import com.redstar.foundation.common.Callback;
@@ -34,8 +35,9 @@ public class Demo4LayerViewModel extends ViewModel implements DemoViewListener {
      * 具体业务处理交由哪个实现来处理，可以根据业务需要进行切换
      * 不应该由View决定交由谁处理
      */
-    public Demo4LayerViewModel(Object tag) {
-        mTag = tag;
+    public Demo4LayerViewModel(BaseActivity activity) {
+        super(activity);
+        mTag = activity.TAG_LOG;
         mUserPresenter = new UserPresenterImpl();
         mShopPresenter = new ShopPresenterImpl();
     }

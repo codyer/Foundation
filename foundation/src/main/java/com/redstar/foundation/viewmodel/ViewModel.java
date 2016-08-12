@@ -1,15 +1,15 @@
 package com.redstar.foundation.viewmodel;
 
-import android.content.Context;
+import com.redstar.foundation.view.FoundationActivity;
 
 /**
  * Created by cody.yi on 2016/8/4.
  */
 public class ViewModel implements ViewListener {
     public Object mTag = "TAG";
-    public Context mContext;
+    public FoundationActivity mContext;
 
-    public ViewModel(Context context) {
+    public ViewModel(FoundationActivity context) {
         mContext = context;
     }
 
