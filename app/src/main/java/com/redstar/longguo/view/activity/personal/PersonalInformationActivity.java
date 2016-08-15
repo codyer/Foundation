@@ -55,14 +55,14 @@ public class PersonalInformationActivity extends BaseActivity {
                                     new ActionSheetDialog.OnSheetItemClickListener() {
                                         @Override
                                         public void onClick(int which) {
-                                            Log.d(TAG_LOG,"拍照 which="+which);
+                                            Log.d(TAG,"拍照 which="+which);
                                         }
                                     })
                             .addSheetItem("从相册选择", ActionSheetDialog.SheetItemColor.Blue,
                                     new ActionSheetDialog.OnSheetItemClickListener() {
                                         @Override
                                         public void onClick(int which) {
-                                            Log.d(TAG_LOG,"从相册选择 which="+which);
+                                            Log.d(TAG,"从相册选择 which="+which);
                                         }
                                     }).show();
                     break;

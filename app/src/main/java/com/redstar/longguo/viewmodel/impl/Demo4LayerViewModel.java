@@ -37,7 +37,7 @@ public class Demo4LayerViewModel extends ViewModel implements DemoViewListener {
      */
     public Demo4LayerViewModel(BaseActivity activity) {
         super(activity);
-        mTag = activity.TAG_LOG;
+        mTag = activity.TAG;
         mUserPresenter = new UserPresenterImpl();
         mShopPresenter = new ShopPresenterImpl();
     }

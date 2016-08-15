@@ -40,7 +40,7 @@ public class Demo3LayerViewModel extends ViewModel implements DemoViewListener {
      */
     public Demo3LayerViewModel(BaseActivity activity) {
         super(activity);
-        mTag = activity.TAG_LOG;
+        mTag = activity.TAG;
         mContext = activity;
         mUserModel = new UserModelImpl();
         mShopModel = new ShopModelImpl();
