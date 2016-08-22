@@ -1,13 +1,14 @@
-package com.redstar.foundation.view;
+package com.redstar.foundation.view.ui.fragment;
 
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
-import com.redstar.foundation.viewmodel.ViewModel;
+import com.redstar.foundation.presenter.Presenter;
+import com.redstar.foundation.view.viewmodel.ViewModel;
 
-public class FoundationFragment<VM extends ViewModel, B extends ViewDataBinding>  extends Fragment {
+public abstract class FoundationFragment<V,P extends Presenter<V>,VM extends ViewModel, B extends ViewDataBinding>  extends Fragment {
     /**
      * Log tag
      */
@@ -16,30 +17,33 @@ public class FoundationFragment<VM extends ViewModel, B extends ViewDataBinding>
     private VM mViewModel;
     private B mBinding;
 
+    protected P mPresenter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TAG = this.getClass().getSimpleName();
         setRetainInstance(true);
-        if (mViewModel != null) mViewModel.onCreate();
+        mPresenter = createPresenter();
+        mPresenter.attachView((V) this);
     }
+
+    protected abstract P createPresenter();
 
     @Override
     public void onResume() {
         super.onResume();
-        if (mViewModel != null) mViewModel.onResume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (mViewModel != null) mViewModel.onPause();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mViewModel != null) mViewModel.onDestroy();
+        mPresenter.detachView();
     }
 
     public VM getViewModel() {

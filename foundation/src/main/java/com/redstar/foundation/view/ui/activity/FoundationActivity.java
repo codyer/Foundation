@@ -1,4 +1,4 @@
-package com.redstar.foundation.view;
+package com.redstar.foundation.view.ui.activity;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -9,9 +9,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
 import com.redstar.foundation.FoundationApplication;
-import com.redstar.foundation.viewmodel.ViewModel;
+import com.redstar.foundation.presenter.Presenter;
+import com.redstar.foundation.view.viewmodel.ViewModel;
 
-public class FoundationActivity<VM extends ViewModel, B extends ViewDataBinding> extends AppCompatActivity {
+public abstract class FoundationActivity<V,P extends Presenter<V>,VM extends ViewModel, B extends ViewDataBinding> extends AppCompatActivity {
     /**
      * Log tag
      */
@@ -20,32 +21,35 @@ public class FoundationActivity<VM extends ViewModel, B extends ViewDataBinding>
     private VM mViewModel;
     private B mBinding;
 
+    protected P mPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TAG = this.getClass().getSimpleName();
-        if (mViewModel != null) mViewModel.onCreate();
+        mPresenter = createPresenter();
+        mPresenter.attachView((V) this);
     }
+
+    protected abstract P createPresenter();
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (mViewModel != null) mViewModel.onResume();
         FoundationApplication.getInstance().setCurrentActivity(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (mViewModel != null) mViewModel.onPause();
         clearReferences();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mViewModel != null) mViewModel.onDestroy();
         clearReferences();
+        mPresenter.detachView();
     }
 
     /**

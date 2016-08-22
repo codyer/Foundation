@@ -1,15 +1,41 @@
 package com.redstar.foundation.presenter;
 
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
+
 /**
- * Created by cody.yi on 2016/8/5.
- *
- * 负责实际业务处理
- * 可以通过tag取消业务处理
- * 需要在特定的PresenterImpl中进行取消方法的实现
- *
- * Presenter是从ViewModel层抽取出来的一层，在实际应用中可以根据
- * 业务复杂程度删除这层。
+ * Created by cody.yi on 2016/8/4.
+ * 需要传人V
  */
-public interface Presenter {
-    boolean cancel(Object tag);
+public class Presenter<V> implements IPresenter<V> {
+    public Object mTag = "TAG";
+    protected Reference<V> mViewRef;
+
+    @Override
+    public void cancel(Object tag) {
+        //empty
+    }
+
+    @Override
+    public void attachView(V view) {
+        mViewRef = new WeakReference<>(view);
+    }
+
+    @Override
+    public void detachView() {
+        if (mViewRef != null) {
+            mViewRef.clear();
+            mViewRef = null;
+        }
+    }
+
+    @Override
+    public V getView() {
+        return mViewRef.get();
+    }
+
+    @Override
+    public boolean isViewAttached() {
+        return mViewRef != null && mViewRef.get() != null;
+    }
 }
