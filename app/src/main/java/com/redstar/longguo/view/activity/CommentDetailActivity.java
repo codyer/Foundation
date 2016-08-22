@@ -2,7 +2,7 @@ package com.redstar.longguo.view.activity;
 
 import android.os.Bundle;
 import com.redstar.longguo.R;
-import com.redstar.longguo.view.base.BaseActivity;
+import com.redstar.longguo.view.activity.base.BaseActivity;
 
 public class CommentDetailActivity extends BaseActivity {
 

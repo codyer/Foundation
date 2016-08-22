@@ -10,7 +10,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.redstar.longguo.R;
-import com.redstar.longguo.view.base.BaseActivity;
+import com.redstar.longguo.view.activity.base.BaseActivity;
 import com.redstar.longguo.view.fragment.ChatFragment;
 import com.redstar.longguo.view.fragment.ManagerFragment;
 import com.redstar.longguo.view.fragment.OrderFragment;

@@ -1,4 +1,4 @@
-package com.redstar.longguo.view.base;
+package com.redstar.longguo.view.fragment.base;
 
 import com.redstar.foundation.view.FoundationFragment;
 

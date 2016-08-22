@@ -14,15 +14,15 @@ import com.redstar.longguo.model.bean.User;
 import com.redstar.longguo.model.impl.ShopModelImpl;
 import com.redstar.longguo.model.impl.UserModelImpl;
 import com.redstar.longguo.view.activity.MainActivity;
-import com.redstar.longguo.view.base.BaseActivity;
-import com.redstar.longguo.viewmodel.listener.DemoViewListener;
+import com.redstar.longguo.view.activity.base.BaseActivity;
+import com.redstar.longguo.viewmodel.listener.DemoViewLifeCycle;
 
 import java.util.List;
 
 /**
  * Created by cody.yi on 2016/8/4.
  */
-public class Demo3LayerViewModel extends ViewModel implements DemoViewListener {
+public class Demo3LayerViewModel extends ViewModel implements DemoViewLifeCycle {
     /**
      * 绑定对应UI属性
      */

@@ -1,4 +1,4 @@
-package com.redstar.longguo.view.base;
+package com.redstar.longguo.view.activity.base;
 
 import com.redstar.foundation.view.FoundationActivity;
 

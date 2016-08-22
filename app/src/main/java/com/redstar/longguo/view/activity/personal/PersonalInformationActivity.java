@@ -9,7 +9,7 @@ import android.view.View;
 import com.redstar.longguo.R;
 import com.redstar.longguo.databinding.ActivityPersonalInformationBinding;
 import com.redstar.longguo.view.activity.EventHandler;
-import com.redstar.longguo.view.base.BaseActivity;
+import com.redstar.longguo.view.activity.base.BaseActivity;
 
 import com.redstar.foundation.view.widget.dialog.ActionSheetDialog;
 

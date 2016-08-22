@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.redstar.longguo.R;
 import com.redstar.longguo.databinding.DemoActivityBinding;
-import com.redstar.longguo.view.base.BaseActivity;
+import com.redstar.longguo.view.activity.base.BaseActivity;
 import com.redstar.longguo.viewmodel.impl.Demo3LayerViewModel;
 import com.redstar.longguo.viewmodel.impl.Demo4LayerViewModel;
 
@@ -37,7 +37,6 @@ public class DemoActivity extends BaseActivity {
          */
         binding.setVm3(viewModel3);
         binding.setVm4(viewModel4);
-
 
         viewModel3.onCreate();
         viewModel4.onCreate();

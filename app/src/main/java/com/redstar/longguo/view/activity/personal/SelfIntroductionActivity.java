@@ -3,7 +3,7 @@ package com.redstar.longguo.view.activity.personal;
 import android.os.Bundle;
 
 import com.redstar.longguo.R;
-import com.redstar.longguo.view.base.BaseActivity;
+import com.redstar.longguo.view.activity.base.BaseActivity;
 
 /**
  * Created by cody.yi on 2016/8/9.

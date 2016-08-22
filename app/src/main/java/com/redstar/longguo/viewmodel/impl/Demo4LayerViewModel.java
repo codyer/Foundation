@@ -9,8 +9,8 @@ import com.redstar.longguo.presenter.ShopPresenter;
 import com.redstar.longguo.presenter.UserPresenter;
 import com.redstar.longguo.presenter.impl.ShopPresenterImpl;
 import com.redstar.longguo.presenter.impl.UserPresenterImpl;
-import com.redstar.longguo.view.base.BaseActivity;
-import com.redstar.longguo.viewmodel.listener.DemoViewListener;
+import com.redstar.longguo.view.activity.base.BaseActivity;
+import com.redstar.longguo.viewmodel.listener.DemoViewLifeCycle;
 
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.common.utils.ToastUtil;
@@ -19,7 +19,7 @@ import com.redstar.foundation.viewmodel.ViewModel;
 /**
  * Created by cody.yi on 2016/8/4.
  */
-public class Demo4LayerViewModel extends ViewModel implements DemoViewListener {
+public class Demo4LayerViewModel extends ViewModel implements DemoViewLifeCycle {
     /**
      * 绑定对应UI属性
      */
