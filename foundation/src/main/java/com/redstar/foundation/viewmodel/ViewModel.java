@@ -5,7 +5,7 @@ import com.redstar.foundation.view.FoundationActivity;
 /**
  * Created by cody.yi on 2016/8/4.
  */
-public class ViewModel implements ViewListener {
+public class ViewModel implements ViewLifeCycle {
     public Object mTag = "TAG";
     public FoundationActivity mContext;
 

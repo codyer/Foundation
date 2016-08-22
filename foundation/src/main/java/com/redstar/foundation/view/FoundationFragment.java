@@ -13,55 +13,55 @@ public class FoundationFragment<VM extends ViewModel, B extends ViewDataBinding>
      */
     public static String TAG = null;
 
-    private VM viewModel;
-    private B binding;
+    private VM mViewModel;
+    private B mBinding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TAG = this.getClass().getSimpleName();
         setRetainInstance(true);
-        if (viewModel != null)viewModel.onCreate();
+        if (mViewModel != null) mViewModel.onCreate();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if (viewModel != null)viewModel.onResume();
+        if (mViewModel != null) mViewModel.onResume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (viewModel != null)viewModel.onPause();
+        if (mViewModel != null) mViewModel.onPause();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (viewModel != null)viewModel.onDestroy();
+        if (mViewModel != null) mViewModel.onDestroy();
     }
 
     public VM getViewModel() {
-        if (viewModel == null) {
+        if (mViewModel == null) {
             throw new NullPointerException("You should setViewModel first!");
         }
-        return viewModel;
+        return mViewModel;
     }
 
     public void setViewModel(@NonNull VM viewModel) {
-        this.viewModel = viewModel;
+        this.mViewModel = viewModel;
     }
 
     public B getBinding() {
-        if (binding == null) {
+        if (mBinding == null) {
             throw new NullPointerException("You should setBinding first!");
         }
-        return binding;
+        return mBinding;
     }
 
     public void setBinding(@NonNull B binding) {
-        this.binding = binding;
+        this.mBinding = binding;
     }
 
 }

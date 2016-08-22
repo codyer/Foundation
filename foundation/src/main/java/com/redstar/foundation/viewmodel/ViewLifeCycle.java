@@ -7,7 +7,7 @@ package com.redstar.foundation.viewmodel;
  * 将View的事件进行分发处理
  * 更应该叫View Handler
  */
-public interface ViewListener {
+public interface ViewLifeCycle {
     void onCreate() ;
     void onPause();
     void onResume();
