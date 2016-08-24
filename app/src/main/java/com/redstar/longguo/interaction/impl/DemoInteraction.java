@@ -1,5 +1,8 @@
 package com.redstar.longguo.interaction.impl;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.redstar.foundation.common.Callback;
@@ -7,28 +10,62 @@ import com.redstar.foundation.common.Constant;
 import com.redstar.foundation.common.utils.HttpUtil;
 import com.redstar.foundation.interaction.impl.Interaction;
 import com.redstar.longguo.interaction.IDemoInteraction;
-import com.redstar.longguo.interaction.bean.Shop;
+import com.redstar.longguo.interaction.bean.Demo;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Created by cody.yi on 2016/8/5.
+ * 例程
  */
 public class DemoInteraction extends Interaction implements IDemoInteraction {
 
+    private final static boolean DEBUG = true;
+
+    /**
+     * 其他需要清理的引用都在这里处理
+     */
     @Override
-    public void getShop(Object tag,final Callback callback) {
+    public void cancel(Object tag) {
+        cancelHttp(tag);
+    }
+
+    @Override
+    public void getDemo(Object tag,@NonNull final Callback callback) {
         Map params = new HashMap();
         params.put("key1", "value1");
         params.put("key2", "value2");
         params.put("key3", "value3");
         callback.onBegin(tag);
+        if (DEBUG) {
+            fakeRequestJson(tag, callback, params);
+        } else {
+            request(tag, callback, params);
+        }
+
+        callback.onProgress(100, 100);
+    }
+
+    private void fakeRequestJson(Object tag,@NonNull final Callback callback, Map params) {
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Demo demo = new Demo();
+                demo.setId(11);
+                demo.setEmail("ssss@sss.com");
+                demo.setName("name999");
+                callback.onSuccess(demo);
+            }
+        }, 1000);
+    }
+
+    private void request(Object tag,@NonNull final Callback callback, Map params) {
         HttpUtil.getData(tag, Constant.HttpUrl.API_TEST, params,
-                Shop.class,
-                new HttpUtil.Callback<Shop>() {
+                Demo.class,
+                new HttpUtil.Callback<Demo>() {
                     @Override
-                    public void onSuccess(Shop data) {
+                    public void onSuccess(Demo data) {
                         Log.d("TAG", "onSuccess Hello World!json=" + data.toString());
                         callback.onSuccess(data);
                     }
@@ -39,6 +76,5 @@ public class DemoInteraction extends Interaction implements IDemoInteraction {
                         callback.onFailure(err);
                     }
                 });
-        callback.onProgress(100,100);
     }
 }

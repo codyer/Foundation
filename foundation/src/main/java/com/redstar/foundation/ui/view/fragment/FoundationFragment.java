@@ -5,10 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
-import com.redstar.foundation.presenter.impl.Presenter;
 import com.redstar.foundation.ui.viewmodel.ViewModel;
 
-public abstract class FoundationFragment<V,P extends Presenter<V>,VM extends ViewModel, B extends ViewDataBinding>  extends Fragment {
+public abstract class FoundationFragment<VM extends ViewModel, B extends ViewDataBinding> extends Fragment{
     /**
      * Log tag
      */
@@ -17,18 +16,11 @@ public abstract class FoundationFragment<V,P extends Presenter<V>,VM extends Vie
     private VM mViewModel;
     private B mBinding;
 
-    protected P mPresenter;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TAG = this.getClass().getSimpleName();
-        setRetainInstance(true);
-        mPresenter = createPresenter();
-        mPresenter.attachView((V) this);
     }
-
-    protected abstract P createPresenter();
 
     @Override
     public void onResume() {
@@ -43,7 +35,6 @@ public abstract class FoundationFragment<V,P extends Presenter<V>,VM extends Vie
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mPresenter.detachView();
     }
 
     public VM getViewModel() {

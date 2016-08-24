@@ -9,11 +9,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
 import com.redstar.foundation.FoundationApplication;
-import com.redstar.foundation.presenter.impl.Presenter;
 import com.redstar.foundation.ui.view.IView;
 import com.redstar.foundation.ui.viewmodel.ViewModel;
 
-public abstract class FoundationActivity<P extends Presenter<FoundationActivity>,VM extends ViewModel, B extends ViewDataBinding> extends AppCompatActivity implements IView{
+public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDataBinding> extends AppCompatActivity implements IView {
     /**
      * Log tag
      */
@@ -21,16 +20,11 @@ public abstract class FoundationActivity<P extends Presenter<FoundationActivity>
 
     private VM mViewModel;
     private B mBinding;
-    private P mPresenter;
-
-    protected abstract P createPresenter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TAG = this.getClass().getSimpleName();
-        mPresenter = createPresenter();
-        mPresenter.attachView(this);
     }
 
     @Override
@@ -41,15 +35,14 @@ public abstract class FoundationActivity<P extends Presenter<FoundationActivity>
 
     @Override
     protected void onPause() {
-        super.onPause();
         clearReferences();
+        super.onPause();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         clearReferences();
-        mPresenter.detachView();
+        super.onDestroy();
     }
 
     /**
@@ -92,7 +85,7 @@ public abstract class FoundationActivity<P extends Presenter<FoundationActivity>
 
     private void clearReferences() {
         Activity currActivity = FoundationApplication.getInstance().getCurrentActivity();
-        if (this.equals(currActivity)){
+        if (this.equals(currActivity)) {
             FoundationApplication.getInstance().setCurrentActivity(null);
         }
     }

@@ -1,5 +1,10 @@
 package com.redstar.foundation.presenter.impl;
 
+import com.redstar.foundation.presenter.IPresenter;
+
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
+
 /**
  * Created by cody.yi on 2016/8/5.
  *
@@ -10,6 +15,32 @@ package com.redstar.foundation.presenter.impl;
  * Presenter是从ViewModel层抽取出来的一层，在实际应用中可以根据
  * 业务复杂程度删除这层。
  */
-public interface Presenter {
-    boolean cancel(Object tag);
+public abstract class Presenter<V> implements IPresenter<V> {
+    private Reference<V> mViewRef;
+
+    @Override
+    public abstract void cancel(Object tag);
+
+    @Override
+    public void attachView(V view) {
+        mViewRef = new WeakReference<>(view);
+    }
+
+    @Override
+    public void detachView() {
+        if (mViewRef != null) {
+            mViewRef.clear();
+            mViewRef = null;
+        }
+    }
+
+    @Override
+    public V getView() {
+        return mViewRef.get();
+    }
+
+    @Override
+    public boolean isViewAttached() {
+        return mViewRef != null && mViewRef.get() != null;
+    }
 }

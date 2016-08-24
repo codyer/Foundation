@@ -2,63 +2,67 @@ package com.redstar.longguo.presenter.impl;
 
 
 import com.redstar.foundation.common.Callback;
-import com.redstar.longguo.interaction.IUserInteraction;
-import com.redstar.longguo.interaction.bean.User;
-import com.redstar.longguo.interaction.impl.UserInteraction;
-
-import java.util.List;
+import com.redstar.foundation.presenter.impl.Presenter;
+import com.redstar.longguo.interaction.bean.Demo;
+import com.redstar.longguo.interaction.impl.DemoInteraction;
+import com.redstar.longguo.presenter.IDemoPresenter;
+import com.redstar.longguo.presenter.mapper.DemoModelMapper;
+import com.redstar.longguo.ui.view.activity.DemoActivity;
 
 /**
  * Created by cody.yi on 2016/8/4.
+ * 例程
  */
-public class DemoPresenter implements UserPresenter {
+public class DemoPresenter extends Presenter<DemoActivity> implements IDemoPresenter {
 
-    private IUserInteraction mUserModel;
-    private boolean isLogin;
-
-    public DemoPresenter() {
-        mUserModel = new UserInteraction();
-    }
+    private DemoInteraction mInteraction = new DemoInteraction();
 
     @Override
-    public boolean check() {
-        isLogin = true;
-        return true;
-    }
-
-    @Override
-    public boolean login(Object tag, final Callback<User> callback) {
-        mUserModel.getUsers(tag, new Callback<List<User>>() {
+    public void onGetDemoClick(Object tag) {
+        mInteraction.getDemo(tag, new Callback<Demo>() {
             @Override
             public void onBegin(Object obj) {
-                callback.onBegin(obj);
+                if (getView() != null){
+                    getView().showLoading("正在加载...");
+                }
             }
 
             @Override
-            public void onSuccess(List<User> data) {
-                callback.onSuccess(data.get(data.size()-1));
+            public void onSuccess(Demo obj) {
+                if (getView() != null){
+                    DemoModelMapper.map(getView().getBinding().getVm(),obj);
+                    getView().hideLoading();
+                }
             }
 
             @Override
             public void onFailure(Object obj) {
-                callback.onFailure(obj);
+                super.onFailure(obj);
+                if (getView() != null){
+                    getView().hideLoading();
+                }
+            }
+
+            @Override
+            public void onCancel(Object obj) {
+                super.onCancel(obj);
+                if (getView() != null) {
+                    getView().hideLoading();
+                }
+            }
+
+            @Override
+            public void onProgress(long count, long current) {
+                super.onProgress(count, current);
+                if (getView() != null) {
+                    getView().onProgress(count, current);
+                }
             }
         });
-        callback.onProgress(100,100);
-        isLogin = true;
-        return true;
     }
 
     @Override
-    public boolean logout(Object tag,Callback callback) {
-        isLogin = false;
-        return true;
-    }
-
-    @Override
-    public boolean cancel(Object tag) {
-        // 耗时操作cancel
-        mUserModel.cancel(tag);
-        return true;
+    public void cancel(Object tag) {
+        mInteraction.cancel(tag);
     }
 }

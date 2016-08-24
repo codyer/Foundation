@@ -13,10 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.redstar.foundation.R;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.redstar.foundation.R;
 
 /**
  * Created by liuqiang on 10/23/15.

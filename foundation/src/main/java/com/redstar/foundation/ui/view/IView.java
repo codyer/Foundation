@@ -32,4 +32,9 @@ public interface IView {
      * show net error
      */
     void showNetError();
+
+    /**
+     * show Progress
+     */
+    void onProgress(long count, long current);
 }

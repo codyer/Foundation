@@ -1,46 +1,37 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-        <import type="com.redstar.longguo.viewmodel.impl.Demo3LayerViewModel" />
-        <import type="com.redstar.longguo.viewmodel.impl.Demo4LayerViewModel" />
-        <!--<import type="android.databinding.ObservableMap" />-->
-        <variable name="vm3" type="Demo3LayerViewModel" />
-        <variable name="vm4" type="Demo4LayerViewModel" />
-        <!--<variable name="plainUser" type="PlainUser" />-->
-        <!--<variable name="mapUser" type="ObservableMap&lt;String, Object>" />-->
+        <import type="com.redstar.foundation.ui.view.EventHandler" />
+        <import type="com.redstar.longguo.ui.viewmodel.DemoViewModel" />
+
+        <variable name="handler" type="EventHandler" />
+        <variable name="vm" type="DemoViewModel" />
     </data>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:gravity="center">
-    <TextView
-        android:text="@{vm3.name}"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:gravity="center">
+        <TextView
+            android:text="@{vm.title}"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:text="@{vm.info}"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="@{vm3.onLoginClick}"
-        android:text="Login 3" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler.onClick}"
+            android:text="activity Login " />
 
-    <TextView
-        android:text="@{vm4.name}"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="@{vm4.onLoginClick}"
-        android:text="Login 4" />
-
-</LinearLayout>
+    </LinearLayout>
 </layout>

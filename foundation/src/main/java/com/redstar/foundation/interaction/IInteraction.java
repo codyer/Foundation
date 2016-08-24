@@ -13,7 +13,6 @@ public interface IInteraction {
     /**
      * 取消操作
      * @param tag 标记
-     * @return 取消是否成功，默认取消成功
      */
-    boolean cancel(Object tag);
+    void cancel(Object tag);
 }
