@@ -1,4 +1,4 @@
-package com.redstar.foundation.view;
+package com.redstar.foundation.view.foundation;
 
 import android.app.Activity;
 import android.app.Fragment;

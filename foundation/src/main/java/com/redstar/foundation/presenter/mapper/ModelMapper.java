@@ -1,4 +1,4 @@
-package com.redstar.foundation.presenter;
+package com.redstar.foundation.presenter.mapper;
 
 import java.util.List;
 

@@ -5,7 +5,7 @@ import android.util.Log;
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.common.Constant;
 import com.redstar.foundation.common.utils.HttpUtil;
-import com.redstar.foundation.interaction.Interaction;
+import com.redstar.foundation.interaction.impl.Interaction;
 import com.redstar.longguo.interaction.IShopInteraction;
 import com.redstar.longguo.interaction.bean.Shop;
 

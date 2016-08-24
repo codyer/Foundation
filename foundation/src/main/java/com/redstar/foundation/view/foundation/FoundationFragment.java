@@ -1,4 +1,4 @@
-package com.redstar.foundation.view;
+package com.redstar.foundation.view.foundation;
 
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;

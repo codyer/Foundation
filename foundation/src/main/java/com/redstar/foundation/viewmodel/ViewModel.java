@@ -1,6 +1,6 @@
 package com.redstar.foundation.viewmodel;
 
-import com.redstar.foundation.view.FoundationActivity;
+import com.redstar.foundation.view.foundation.FoundationActivity;
 
 /**
  * Created by cody.yi on 2016/8/4.

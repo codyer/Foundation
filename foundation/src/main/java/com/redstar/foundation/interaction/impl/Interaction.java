@@ -1,6 +1,7 @@
-package com.redstar.foundation.interaction;
+package com.redstar.foundation.interaction.impl;
 
 import com.redstar.foundation.common.utils.HttpUtil;
+import com.redstar.foundation.interaction.IInteraction;
 
 /**
  * Created by cody.yi on 2016/8/5.
@@ -12,6 +13,11 @@ import com.redstar.foundation.common.utils.HttpUtil;
  */
 public class Interaction implements IInteraction {
 
+    /**
+     * 取消操作
+     * @param tag 标记
+     * @return 取消是否成功，默认取消成功
+     */
     public boolean cancel(Object tag){
         HttpUtil.cancel(tag);
         return true;
