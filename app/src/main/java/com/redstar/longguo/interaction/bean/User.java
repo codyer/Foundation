@@ -1,9 +1,10 @@
-package com.redstar.longguo.model.bean;
+package com.redstar.longguo.interaction.bean;
 
 import java.util.List;
 
 /**
  * Created by cody.yi on 2016/8/4.
+ * 用户的数据模型
  */
 public class User {
     private int id;

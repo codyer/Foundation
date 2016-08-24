@@ -2,7 +2,7 @@ package com.redstar.longguo.presenter;
 
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.presenter.Presenter;
-import com.redstar.longguo.model.bean.User;
+import com.redstar.longguo.interaction.bean.User;
 
 /**
  * Created by cody.yi on 2016/8/4.

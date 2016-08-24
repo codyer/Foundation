@@ -7,7 +7,8 @@ import com.redstar.foundation.common.utils.LogUtil;
  *
  * 所有View和ViewModel，ViewModel和Presenter之间的回调使用这个Callback
  */
-public class Callback<T> {
+public abstract class Callback<T> {
+
     // 操作执行前
     public void onBegin(Object obj) {
         LogUtil.i("Callback onBegin"+obj);

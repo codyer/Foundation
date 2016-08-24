@@ -1,7 +1,8 @@
-package com.redstar.longguo.model.bean;
+package com.redstar.longguo.interaction.bean;
 
 /**
  * Created by cody.yi on 2016/8/4.
+ * 商店的数据模型
  */
 public class Shop {
 

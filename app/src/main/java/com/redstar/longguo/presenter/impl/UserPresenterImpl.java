@@ -2,9 +2,9 @@ package com.redstar.longguo.presenter.impl;
 
 
 import com.redstar.foundation.common.Callback;
-import com.redstar.longguo.model.UserInteraction;
-import com.redstar.longguo.model.bean.User;
-import com.redstar.longguo.model.impl.UserInteractionImpl;
+import com.redstar.longguo.interaction.IUserInteraction;
+import com.redstar.longguo.interaction.bean.User;
+import com.redstar.longguo.interaction.impl.UserInteraction;
 import com.redstar.longguo.presenter.UserPresenter;
 
 import java.util.List;
@@ -14,11 +14,11 @@ import java.util.List;
  */
 public class UserPresenterImpl implements UserPresenter {
 
-    private UserInteraction mUserModel;
+    private IUserInteraction mUserModel;
     private boolean isLogin;
 
     public UserPresenterImpl() {
-        mUserModel = new UserInteractionImpl();
+        mUserModel = new UserInteraction();
     }
 
     @Override
@@ -29,7 +29,7 @@ public class UserPresenterImpl implements UserPresenter {
 
     @Override
     public boolean login(Object tag, final Callback<User> callback) {
-        mUserModel.getListUser(tag, new Callback<List<User>>() {
+        mUserModel.getUsers(tag, new Callback<List<User>>() {
             @Override
             public void onBegin(Object obj) {
                 callback.onBegin(obj);

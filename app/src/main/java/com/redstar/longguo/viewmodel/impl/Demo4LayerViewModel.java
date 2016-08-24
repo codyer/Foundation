@@ -3,8 +3,8 @@ package com.redstar.longguo.viewmodel.impl;
 import android.databinding.ObservableField;
 import android.view.View;
 
-import com.redstar.longguo.model.bean.Shop;
-import com.redstar.longguo.model.bean.User;
+import com.redstar.longguo.interaction.bean.Shop;
+import com.redstar.longguo.interaction.bean.User;
 import com.redstar.longguo.presenter.ShopPresenter;
 import com.redstar.longguo.presenter.UserPresenter;
 import com.redstar.longguo.presenter.impl.ShopPresenterImpl;

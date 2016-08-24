@@ -1,7 +1,5 @@
 package com.redstar.foundation.interaction;
 
-import com.redstar.foundation.common.utils.HttpUtil;
-
 /**
  * Created by cody.yi on 2016/8/5.
  *
@@ -10,10 +8,6 @@ import com.redstar.foundation.common.utils.HttpUtil;
  * 可以通过tag取消数据处理
  * 需要在特定的InteractionImpl中进行取消方法的实现
  */
-public class Interaction implements IInteraction {
-
-    public boolean cancel(Object tag){
-        HttpUtil.cancel(tag);
-        return true;
-    }
+public interface IInteraction {
+    boolean cancel(Object tag);
 }

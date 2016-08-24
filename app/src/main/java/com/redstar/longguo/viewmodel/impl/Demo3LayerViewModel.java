@@ -7,12 +7,12 @@ import android.view.View;
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.common.utils.ToastUtil;
 import com.redstar.foundation.viewmodel.ViewModel;
-import com.redstar.longguo.model.ShopInteraction;
-import com.redstar.longguo.model.UserInteraction;
-import com.redstar.longguo.model.bean.Shop;
-import com.redstar.longguo.model.bean.User;
-import com.redstar.longguo.model.impl.ShopInteractionImpl;
-import com.redstar.longguo.model.impl.UserInteractionImpl;
+import com.redstar.longguo.interaction.IShopInteraction;
+import com.redstar.longguo.interaction.IUserInteraction;
+import com.redstar.longguo.interaction.bean.Shop;
+import com.redstar.longguo.interaction.bean.User;
+import com.redstar.longguo.interaction.impl.ShopInteraction;
+import com.redstar.longguo.interaction.impl.UserInteraction;
 import com.redstar.longguo.view.activity.MainActivity;
 import com.redstar.longguo.view.activity.base.BaseActivity;
 import com.redstar.longguo.viewmodel.listener.DemoViewLifeCycle;
@@ -31,8 +31,8 @@ public class Demo3LayerViewModel extends ViewModel implements DemoViewLifeCycle 
     /**
      * 实际业务处理，业务相关的变量管理
      */
-    private UserInteraction mUserModel;
-    private ShopInteraction mShopModel;
+    private IUserInteraction mUserModel;
+    private IShopInteraction mShopModel;
 
     /**
      * 具体业务处理交由哪个实现来处理，可以根据业务需要进行切换
@@ -42,13 +42,13 @@ public class Demo3LayerViewModel extends ViewModel implements DemoViewLifeCycle 
         super(activity);
         mTag = activity.TAG;
         mContext = activity;
-        mUserModel = new UserInteractionImpl();
-        mShopModel = new ShopInteractionImpl();
+        mUserModel = new UserInteraction();
+        mShopModel = new ShopInteraction();
     }
 
     @Override
     public void onLoginClick(View view) {
-        mUserModel.getListUser(mTag, new Callback<List<User>>() {
+        mUserModel.getUsers(mTag, new Callback<List<User>>() {
             @Override
             public void onSuccess(List<User> userList) {
                 name.set(userList.get(0).getName());
