@@ -5,7 +5,7 @@ package com.redstar.foundation.ui.view;
  * @description base activity and base fragment 需要实现的接口
  * @date 16/8/22.
  */
-public interface IView {
+public interface IView<VM,B> {
     /**
      * show loading message
      *
@@ -37,4 +37,8 @@ public interface IView {
      * show Progress
      */
     void onProgress(long count, long current);
+
+    B getBinding();
+
+    VM getViewModel();
 }

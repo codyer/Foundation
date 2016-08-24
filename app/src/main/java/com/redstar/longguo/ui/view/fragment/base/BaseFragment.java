@@ -1,7 +1,6 @@
 package com.redstar.longguo.ui.view.fragment.base;
 
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -10,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.redstar.foundation.common.utils.LogUtil;
 import com.redstar.foundation.presenter.impl.Presenter;
 import com.redstar.foundation.ui.view.EventHandler;
 import com.redstar.foundation.ui.view.fragment.FoundationFragment;
@@ -42,14 +42,43 @@ public abstract class BaseFragment<P extends Presenter,VM extends ViewModel,B ex
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mPresenter.attachView(getActivity());
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mPresenter.attachView(this);
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
+    public void onDestroyView() {
         mPresenter.detachView();
+        super.onDestroyView();
+    }
+    @Override
+    public void showLoading(String msg) {
+        LogUtil.d("BaseFragment ++ showLoading");
+    }
+
+    @Override
+    public void hideLoading() {
+        LogUtil.d("BaseFragment ++ hideLoading");
+    }
+
+    @Override
+    public void showError(String msg) {
+        LogUtil.d("BaseFragment ++ showError");
+    }
+
+    @Override
+    public void showException(String msg) {
+        LogUtil.d("BaseFragment ++ showException");
+    }
+
+    @Override
+    public void showNetError() {
+        LogUtil.d("BaseFragment ++ showNetError");
+    }
+
+    @Override
+    public void onProgress(long count, long current) {
+        LogUtil.d("BaseFragment ++ onProgress");
     }
 }

@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
+import com.redstar.foundation.ui.view.IView;
 import com.redstar.foundation.ui.viewmodel.ViewModel;
 
-public abstract class FoundationFragment<VM extends ViewModel, B extends ViewDataBinding> extends Fragment{
+public abstract class FoundationFragment<VM extends ViewModel, B extends ViewDataBinding> extends Fragment implements IView<VM,B>{
     /**
      * Log tag
      */
@@ -37,6 +38,7 @@ public abstract class FoundationFragment<VM extends ViewModel, B extends ViewDat
         super.onDestroy();
     }
 
+    @Override
     public VM getViewModel() {
         if (mViewModel == null) {
             throw new NullPointerException("You should setViewModel first!");
@@ -48,6 +50,7 @@ public abstract class FoundationFragment<VM extends ViewModel, B extends ViewDat
         this.mViewModel = viewModel;
     }
 
+    @Override
     public B getBinding() {
         if (mBinding == null) {
             throw new NullPointerException("You should setBinding first!");

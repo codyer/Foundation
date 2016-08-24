@@ -24,11 +24,23 @@ public class DemoFragment extends BaseFragment<DemoPresenter,DemoViewModel, Demo
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        DemoViewModel vm = new DemoViewModel();
+        vm.setInfo("default");
+        vm.setTitle("default title");
+        getBinding().setVm(vm);
         getBinding().setHandler(this);
     }
 
     @Override
     public void onClick(View view) {
-
+        switch (view.getId()){
+            case R.id.addFragment:
+//                Fragment fragment = new DemoFragment();
+//                addFragment(R.id.frame,fragment,TAG);
+                break;
+            case R.id.getDemo:
+                mPresenter.onGetDemoClick(TAG + view.getTag());
+                break;
+        }
     }
 }

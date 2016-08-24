@@ -3,17 +3,18 @@ package com.redstar.longguo.presenter.impl;
 
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.presenter.impl.Presenter;
+import com.redstar.foundation.ui.view.IView;
 import com.redstar.longguo.interaction.bean.Demo;
 import com.redstar.longguo.interaction.impl.DemoInteraction;
 import com.redstar.longguo.presenter.IDemoPresenter;
 import com.redstar.longguo.presenter.mapper.DemoModelMapper;
-import com.redstar.longguo.ui.view.activity.DemoActivity;
+import com.redstar.longguo.ui.viewmodel.DemoViewModel;
 
 /**
  * Created by cody.yi on 2016/8/4.
  * 例程
  */
-public class DemoPresenter extends Presenter<DemoActivity> implements IDemoPresenter {
+public class DemoPresenter<VM,B,V extends IView<VM,B>> extends Presenter<VM,B,V> implements IDemoPresenter<V> {
 
     private DemoInteraction mInteraction = new DemoInteraction();
 
@@ -30,7 +31,7 @@ public class DemoPresenter extends Presenter<DemoActivity> implements IDemoPrese
             @Override
             public void onSuccess(Demo obj) {
                 if (getView() != null){
-                    DemoModelMapper.map(getView().getBinding().getVm(),obj);
+                    DemoModelMapper.map((DemoViewModel) getViewModel(),obj);
                     getView().hideLoading();
                 }
             }

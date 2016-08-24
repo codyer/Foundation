@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 
+import com.redstar.foundation.common.utils.LogUtil;
 import com.redstar.foundation.presenter.impl.Presenter;
 import com.redstar.foundation.ui.view.EventHandler;
 import com.redstar.foundation.ui.view.activity.FoundationActivity;
@@ -40,31 +41,31 @@ public abstract class BaseActivity<P extends Presenter,VM extends ViewModel,B ex
 
     @Override
     public void showLoading(String msg) {
-
+        LogUtil.d("BaseActivity ++ showLoading");
     }
 
     @Override
     public void hideLoading() {
-
+        LogUtil.d("BaseActivity ++ hideLoading");
     }
 
     @Override
     public void showError(String msg) {
-
+        LogUtil.d("BaseActivity ++ showError");
     }
 
     @Override
     public void showException(String msg) {
-
+        LogUtil.d("BaseActivity ++ showException");
     }
 
     @Override
     public void showNetError() {
-
+        LogUtil.d("BaseActivity ++ showNetError");
     }
 
     @Override
     public void onProgress(long count, long current) {
-
+        LogUtil.d("BaseActivity ++ onProgress");
     }
 }

@@ -1,12 +1,14 @@
 package com.redstar.longguo.ui.view.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.redstar.longguo.R;
 import com.redstar.longguo.databinding.DemoActivityBinding;
 import com.redstar.longguo.presenter.impl.DemoPresenter;
 import com.redstar.longguo.ui.view.activity.base.BaseActivity;
+import com.redstar.longguo.ui.view.fragment.DemoFragment;
 import com.redstar.longguo.ui.viewmodel.DemoViewModel;
 
 /**
@@ -46,6 +48,14 @@ public class DemoActivity extends BaseActivity<DemoPresenter,DemoViewModel, Demo
 
     @Override
     public void onClick(View view) {
-        mPresenter.onGetDemoClick(TAG + view.getTag());
+        switch (view.getId()){
+            case R.id.addFragment:
+                Fragment fragment = new DemoFragment();
+                addFragment(R.id.frame,fragment,TAG);
+                break;
+            case R.id.getDemo:
+                mPresenter.onGetDemoClick(TAG + view.getTag());
+                break;
+        }
     }
 }
