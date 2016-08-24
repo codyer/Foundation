@@ -5,7 +5,7 @@ import android.util.Base64;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
-import com.redstar.foundation.model.bean.Result;
+import com.redstar.foundation.interaction.bean.Result;
 
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
