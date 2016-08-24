@@ -14,7 +14,7 @@ import com.redstar.longguo.ui.viewmodel.DemoViewModel;
  * Created by cody.yi on 2016/8/4.
  * 例程
  */
-public class DemoPresenter<VM,B,V extends IView<VM,B>> extends Presenter<VM,B,V> implements IDemoPresenter<V> {
+public class DemoPresenter<B,V extends IView<DemoViewModel,B>> extends Presenter<DemoViewModel,B,V> implements IDemoPresenter<DemoViewModel,B,V> {
 
     private DemoInteraction mInteraction = new DemoInteraction();
 
@@ -31,7 +31,7 @@ public class DemoPresenter<VM,B,V extends IView<VM,B>> extends Presenter<VM,B,V>
             @Override
             public void onSuccess(Demo obj) {
                 if (getView() != null){
-                    DemoModelMapper.map((DemoViewModel) getViewModel(),obj);
+                    DemoModelMapper.map(getView().getViewModel(),obj);
                     getView().hideLoading();
                 }
             }

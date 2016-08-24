@@ -12,7 +12,7 @@ import com.redstar.foundation.FoundationApplication;
 import com.redstar.foundation.ui.view.IView;
 import com.redstar.foundation.ui.viewmodel.ViewModel;
 
-public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDataBinding> extends AppCompatActivity implements IView<VM,B> {
+public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDataBinding> extends AppCompatActivity implements IView<VM, B> {
     /**
      * Log tag
      */
@@ -52,8 +52,8 @@ public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDat
      * @param fragment        The fragment to be added.
      */
     protected void addFragment(int containerViewId, Fragment fragment, String tag) {
-        FragmentTransaction fragmentTransaction = this.getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(containerViewId, fragment, tag);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(containerViewId, fragment, tag);
         fragmentTransaction.commit();
     }
 
@@ -69,6 +69,7 @@ public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDat
         return mViewModel;
     }
 
+    @Override
     public void setViewModel(@NonNull VM viewModel) {
         this.mViewModel = viewModel;
     }
@@ -81,10 +82,18 @@ public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDat
         return mBinding;
     }
 
+    @Override
     public void setBinding(@NonNull B binding) {
         this.mBinding = binding;
     }
 
+    /**
+     * 是否已经设置bind
+     */
+    @Override
+    public boolean isBound() {
+        return mBinding != null;
+    }
     private void clearReferences() {
         Activity currActivity = FoundationApplication.getInstance().getCurrentActivity();
         if (this.equals(currActivity)) {

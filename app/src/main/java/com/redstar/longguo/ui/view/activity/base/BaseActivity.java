@@ -11,10 +11,22 @@ import com.redstar.foundation.ui.view.EventHandler;
 import com.redstar.foundation.ui.view.activity.FoundationActivity;
 import com.redstar.foundation.ui.viewmodel.ViewModel;
 
+import org.antlr.v4.runtime.misc.NotNull;
+
 public abstract class BaseActivity<P extends Presenter,VM extends ViewModel,B extends ViewDataBinding> extends FoundationActivity<VM,B> implements EventHandler{
 
     protected P mPresenter;
-    protected abstract P createPresenter();
+
+    /**
+     * 每个view保证只有一个ViewModel，当包含其他ViewModel时使用根ViewModel包含子ViewModel
+     */
+    protected abstract@NotNull VM createViewModel();
+
+    /**
+     * 每个view保证只有一个Presenter
+     */
+    protected abstract@NotNull P createPresenter();
+
     /**
      * 子类提供有binding的资源ID
      */
@@ -29,6 +41,7 @@ public abstract class BaseActivity<P extends Presenter,VM extends ViewModel,B ex
         B b = DataBindingUtil.setContentView(
                 this, getLayoutID());
         setBinding(b);
+        setViewModel(createViewModel());
         mPresenter = createPresenter();
         mPresenter.attachView(this);
     }

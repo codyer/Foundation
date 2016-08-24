@@ -41,4 +41,10 @@ public interface IView<VM,B> {
     B getBinding();
 
     VM getViewModel();
+
+    void setBinding(B binding);
+
+    void setViewModel(VM viewModel);
+
+    boolean isBound();
 }

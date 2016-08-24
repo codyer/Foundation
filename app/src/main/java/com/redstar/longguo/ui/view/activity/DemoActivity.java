@@ -17,6 +17,14 @@ import com.redstar.longguo.ui.viewmodel.DemoViewModel;
 public class DemoActivity extends BaseActivity<DemoPresenter,DemoViewModel, DemoActivityBinding> {
 
     @Override
+    protected DemoViewModel createViewModel() {
+        DemoViewModel vm = new DemoViewModel();
+        vm.setInfo("default");
+        vm.setTitle("default title");
+        return vm;
+    }
+
+    @Override
     protected DemoPresenter createPresenter() {
         return new DemoPresenter();
     }
@@ -33,10 +41,7 @@ public class DemoActivity extends BaseActivity<DemoPresenter,DemoViewModel, Demo
         /**
          * 将ViewModel和mBinding进行绑定
          */
-        DemoViewModel vm = new DemoViewModel();
-        vm.setInfo("default");
-        vm.setTitle("default title");
-        getBinding().setVm(vm);
+        getBinding().setVm(getViewModel());
         getBinding().setHandler(this);
     }
 

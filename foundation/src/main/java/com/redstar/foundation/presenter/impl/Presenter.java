@@ -15,8 +15,11 @@ import java.lang.ref.WeakReference;
  *
  * Presenter是从ViewModel层抽取出来的一层，在实际应用中可以根据
  * 业务复杂程度删除这层。
+ *
+ * Presenter和ViewModel，Binding，View相关，因此将其接口添加泛型支持
+ * 在继承此类时，根据情况将ViewModel，Binding，View（Activity，Fragment）在合适的地方指定
  */
-public abstract class Presenter<VM,B,V extends IView<VM,B>> implements IPresenter<V> {
+public abstract class Presenter<VM,B,V extends IView<VM,B>> implements IPresenter<VM,B,V> {
     private Reference<V> mViewRef;
 
     @Override
@@ -43,13 +46,5 @@ public abstract class Presenter<VM,B,V extends IView<VM,B>> implements IPresente
     @Override
     public boolean isViewAttached() {
         return mViewRef != null && mViewRef.get() != null;
-    }
-
-    public VM getViewModel(){
-        return mViewRef.get().getViewModel();
-    }
-
-    public B getBinding(){
-        return mViewRef.get().getBinding();
     }
 }

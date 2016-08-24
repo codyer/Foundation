@@ -20,8 +20,16 @@ import org.antlr.v4.runtime.misc.NotNull;
 public abstract class BaseFragment<P extends Presenter,VM extends ViewModel,B extends ViewDataBinding> extends FoundationFragment<VM,B> implements EventHandler{
 
     protected P mPresenter;
+    /**
+     * 每个view保证只有一个ViewModel，当包含其他ViewModel时使用根ViewModel包含子ViewModel
+     */
+    protected abstract@NotNull VM createViewModel();
+
+    /**
+     * 每个view保证只有一个Presenter
+     */
     protected abstract@NotNull P createPresenter();
-    private B b;
+
     /**
      * 子类提供有binding的资源ID
      */
@@ -33,9 +41,10 @@ public abstract class BaseFragment<P extends Presenter,VM extends ViewModel,B ex
         /**
          * 绑定view
          */
-        if (b == null) {
-            b = DataBindingUtil.inflate(inflater,getLayoutID(), container, false);
+        if (!isBound()) {
+            B b = DataBindingUtil.inflate(inflater,getLayoutID(), container, false);
             setBinding(b);
+            setViewModel(createViewModel());
             mPresenter = createPresenter();
         }
         return getBinding().getRoot();
