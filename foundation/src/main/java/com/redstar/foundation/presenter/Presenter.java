@@ -10,6 +10,6 @@ package com.redstar.foundation.presenter;
  * Presenter是从ViewModel层抽取出来的一层，在实际应用中可以根据
  * 业务复杂程度删除这层。
  */
-public interface Presenter {
-    boolean cancel(Object tag);
+public abstract class Presenter {
+    abstract boolean cancel(Object tag);
 }

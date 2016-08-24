@@ -13,7 +13,7 @@ import com.redstar.foundation.FoundationApplication;
 import com.redstar.foundation.common.Constant;
 import com.redstar.foundation.common.utils.http.HttpClient;
 import com.redstar.foundation.common.utils.http.HttpConnectException;
-import com.redstar.foundation.model.bean.Result;
+import com.redstar.foundation.interaction.bean.Result;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;

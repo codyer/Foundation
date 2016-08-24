@@ -2,8 +2,8 @@ package com.redstar.longguo.presenter.impl;
 
 
 import com.redstar.foundation.common.Callback;
-import com.redstar.longguo.model.ShopModel;
-import com.redstar.longguo.model.impl.ShopModelImpl;
+import com.redstar.longguo.model.ShopInteraction;
+import com.redstar.longguo.model.impl.ShopInteractionImpl;
 import com.redstar.longguo.presenter.ShopPresenter;
 
 /**
@@ -11,10 +11,10 @@ import com.redstar.longguo.presenter.ShopPresenter;
  */
 public class ShopPresenterImpl implements ShopPresenter {
 
-    private ShopModel mShopModel;
+    private ShopInteraction mShopModel;
 
     public ShopPresenterImpl() {
-        mShopModel = new ShopModelImpl();
+        mShopModel = new ShopInteractionImpl();
     }
 
     @Override

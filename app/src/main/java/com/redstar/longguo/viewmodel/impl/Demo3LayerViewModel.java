@@ -7,12 +7,12 @@ import android.view.View;
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.common.utils.ToastUtil;
 import com.redstar.foundation.viewmodel.ViewModel;
-import com.redstar.longguo.model.ShopModel;
-import com.redstar.longguo.model.UserModel;
+import com.redstar.longguo.model.ShopInteraction;
+import com.redstar.longguo.model.UserInteraction;
 import com.redstar.longguo.model.bean.Shop;
 import com.redstar.longguo.model.bean.User;
-import com.redstar.longguo.model.impl.ShopModelImpl;
-import com.redstar.longguo.model.impl.UserModelImpl;
+import com.redstar.longguo.model.impl.ShopInteractionImpl;
+import com.redstar.longguo.model.impl.UserInteractionImpl;
 import com.redstar.longguo.view.activity.MainActivity;
 import com.redstar.longguo.view.activity.base.BaseActivity;
 import com.redstar.longguo.viewmodel.listener.DemoViewLifeCycle;
@@ -31,8 +31,8 @@ public class Demo3LayerViewModel extends ViewModel implements DemoViewLifeCycle 
     /**
      * 实际业务处理，业务相关的变量管理
      */
-    private UserModel mUserModel;
-    private ShopModel mShopModel;
+    private UserInteraction mUserModel;
+    private ShopInteraction mShopModel;
 
     /**
      * 具体业务处理交由哪个实现来处理，可以根据业务需要进行切换
@@ -42,8 +42,8 @@ public class Demo3LayerViewModel extends ViewModel implements DemoViewLifeCycle 
         super(activity);
         mTag = activity.TAG;
         mContext = activity;
-        mUserModel = new UserModelImpl();
-        mShopModel = new ShopModelImpl();
+        mUserModel = new UserInteractionImpl();
+        mShopModel = new ShopInteractionImpl();
     }
 
     @Override

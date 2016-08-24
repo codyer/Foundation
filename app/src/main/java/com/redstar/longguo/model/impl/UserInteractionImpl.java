@@ -3,7 +3,7 @@ package com.redstar.longguo.model.impl;
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.common.Constant;
 import com.redstar.foundation.common.utils.HttpUtil;
-import com.redstar.longguo.model.UserModel;
+import com.redstar.longguo.model.UserInteraction;
 import com.redstar.longguo.model.bean.User;
 
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Created by cody.yi on 2016/8/4.
  */
-public class UserModelImpl implements UserModel {
+public class UserInteractionImpl implements UserInteraction {
 
     @Override
     public boolean cancel(Object tag) {

@@ -1,7 +1,10 @@
-package com.redstar.foundation.model.bean;
+package com.redstar.foundation.interaction.bean;
+
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by cody.yi on 2016/7/12.
+ * 网络请求包裹类result
  */
 public class Result<T> {
     /**
@@ -16,7 +19,9 @@ public class Result<T> {
 
     /**
      * data	返回数据
+     * 相当于data model
      */
+    @SerializedName(value = "data", alternate = {"dataMap", "dataReturn"})
     private T data;
 
     public Result(String code, String message, T data) {

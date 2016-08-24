@@ -1,11 +1,11 @@
 package com.redstar.longguo.model;
 
 import com.redstar.foundation.common.Callback;
-import com.redstar.foundation.model.Model;
+import com.redstar.foundation.interaction.Interaction;
 
 /**
  * Created by cody.yi on 2016/8/5.
  */
-public interface ShopModel extends Model {
+public interface ShopInteraction extends Interaction {
     void getShop(Object tag,Callback callback);
 }

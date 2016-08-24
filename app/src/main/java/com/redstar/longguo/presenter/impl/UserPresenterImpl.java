@@ -2,9 +2,9 @@ package com.redstar.longguo.presenter.impl;
 
 
 import com.redstar.foundation.common.Callback;
-import com.redstar.longguo.model.UserModel;
+import com.redstar.longguo.model.UserInteraction;
 import com.redstar.longguo.model.bean.User;
-import com.redstar.longguo.model.impl.UserModelImpl;
+import com.redstar.longguo.model.impl.UserInteractionImpl;
 import com.redstar.longguo.presenter.UserPresenter;
 
 import java.util.List;
@@ -14,11 +14,11 @@ import java.util.List;
  */
 public class UserPresenterImpl implements UserPresenter {
 
-    private UserModel mUserModel;
+    private UserInteraction mUserModel;
     private boolean isLogin;
 
     public UserPresenterImpl() {
-        mUserModel = new UserModelImpl();
+        mUserModel = new UserInteractionImpl();
     }
 
     @Override
