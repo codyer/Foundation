@@ -24,7 +24,7 @@ import java.util.Map;
 import okhttp3.OkHttpClient;
 import com.redstar.foundation.FoundationApplication;
 import com.redstar.foundation.common.utils.ImageUtil;
-import com.redstar.foundation.model.bean.Result;
+import com.redstar.foundation.interaction.bean.Result;
 
 /**
  * Created by cody.yi on 2016/7/13.

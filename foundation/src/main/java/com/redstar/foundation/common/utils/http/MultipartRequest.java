@@ -7,7 +7,7 @@ package com.redstar.foundation.common.utils.http;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.redstar.foundation.model.bean.Result;
+import com.redstar.foundation.interaction.bean.Result;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

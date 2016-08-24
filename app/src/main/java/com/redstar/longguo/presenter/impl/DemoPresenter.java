@@ -1,0 +1,64 @@
+package com.redstar.longguo.presenter.impl;
+
+
+import com.redstar.foundation.common.Callback;
+import com.redstar.longguo.interaction.IUserInteraction;
+import com.redstar.longguo.interaction.bean.User;
+import com.redstar.longguo.interaction.impl.UserInteraction;
+
+import java.util.List;
+
+/**
+ * Created by cody.yi on 2016/8/4.
+ */
+public class DemoPresenter implements UserPresenter {
+
+    private IUserInteraction mUserModel;
+    private boolean isLogin;
+
+    public DemoPresenter() {
+        mUserModel = new UserInteraction();
+    }
+
+    @Override
+    public boolean check() {
+        isLogin = true;
+        return true;
+    }
+
+    @Override
+    public boolean login(Object tag, final Callback<User> callback) {
+        mUserModel.getUsers(tag, new Callback<List<User>>() {
+            @Override
+            public void onBegin(Object obj) {
+                callback.onBegin(obj);
+            }
+
+            @Override
+            public void onSuccess(List<User> data) {
+                callback.onSuccess(data.get(data.size()-1));
+            }
+
+            @Override
+            public void onFailure(Object obj) {
+                callback.onFailure(obj);
+            }
+        });
+        callback.onProgress(100,100);
+        isLogin = true;
+        return true;
+    }
+
+    @Override
+    public boolean logout(Object tag,Callback callback) {
+        isLogin = false;
+        return true;
+    }
+
+    @Override
+    public boolean cancel(Object tag) {
+        // 耗时操作cancel
+        mUserModel.cancel(tag);
+        return true;
+    }
+}
