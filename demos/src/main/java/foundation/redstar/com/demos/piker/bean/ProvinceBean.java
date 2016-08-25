@@ -1,4 +1,4 @@
-package com.redstar.longguo.demo.bean;
+package foundation.redstar.com.demos.piker.bean;
 
 import com.redstar.foundation.ui.widget.pickerview.model.IPickerViewData;
 

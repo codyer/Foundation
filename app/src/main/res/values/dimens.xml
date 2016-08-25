@@ -15,20 +15,8 @@
     <dimen name="small_padding">5dp</dimen>
     <dimen name="middle_padding">10dp</dimen>
     <dimen name="large_padding">15dp</dimen>
-    <dimen name="larger_paddng">20dp</dimen>
-
+    <dimen name="larger_padding">20dp</dimen>i
     <dimen name="widget_height">45dp</dimen>
 
 
-    <!--Personal-->
-    <dimen name="personal_information_header_height">265dp</dimen>
-
-    <!-- 替换尺寸 -->
-    <dimen name="replace_by_40px_to_dp">20dp</dimen>
-    <dimen name="replace_by_36px_to_dp">18dp</dimen>
-    <dimen name="replace_by_32px_to_dp">16dp</dimen>
-    <dimen name="replace_by_30px_to_dp">15dp</dimen>
-    <dimen name="replace_by_20px_to_dp">10dp</dimen>
-    <dimen name="replace_by_12px_to_dp">6dp</dimen>
-    <dimen name="replace_by_10px_to_dp">5dp</dimen>
 </resources>

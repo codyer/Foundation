@@ -1,4 +1,4 @@
-package com.redstar.longguo.demo;
+package foundation.redstar.com.demos.piker;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,17 +7,18 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-import com.redstar.foundation.R;
 import com.redstar.foundation.ui.widget.pickerview.OptionsPickerView;
 import com.redstar.foundation.ui.widget.pickerview.TimePickerView;
 import com.redstar.foundation.ui.widget.pickerview.model.IPickerViewData;
-import com.redstar.longguo.demo.bean.PickerViewData;
-import com.redstar.longguo.demo.bean.ProvinceBean;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+
+import foundation.redstar.com.demos.R;
+import foundation.redstar.com.demos.piker.bean.PickerViewData;
+import foundation.redstar.com.demos.piker.bean.ProvinceBean;
 
 
 public class PikerDemoActivity extends Activity {
