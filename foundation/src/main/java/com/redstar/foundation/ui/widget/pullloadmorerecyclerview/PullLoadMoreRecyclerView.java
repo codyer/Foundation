@@ -34,6 +34,7 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
     private RecyclerView mRecyclerView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private PullLoadMoreListener mPullLoadMoreListener;
+    private boolean isRegister = false;//是否注册了mEmptyDataObserver
     private boolean hasMore = true;
     private boolean isRefresh = false;
     private boolean isLoadMore = false;
@@ -100,7 +101,6 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
      */
 
     public void setGridLayout(int spanCount) {
-
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, spanCount);
         gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(gridLayoutManager);
@@ -148,7 +148,6 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
 
 
     public void showEmptyView() {
-
         RecyclerView.Adapter<?> adapter = mRecyclerView.getAdapter();
         if (adapter != null && mEmptyViewContainer.getChildCount() != 0) {
             if (adapter.getItemCount() == 0) {
@@ -161,26 +160,45 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
 
     }
 
+    /**
+     * should called after onAttachedToWindow
+     * @param adapter
+     */
     public void setAdapter(RecyclerView.Adapter adapter) {
         if (adapter != null) {
             mRecyclerView.setAdapter(adapter);
             showEmptyView();
-            if (mEmptyDataObserver == null) {
-                mEmptyDataObserver = new PullLoadMoreRecyclerView.AdapterDataObserver();
+            registerEmptyDataObserver();
+        }
+    }
+
+    private void registerEmptyDataObserver() {
+        RecyclerView.Adapter<?> adapter = mRecyclerView.getAdapter();
+        if (mEmptyDataObserver == null) {
+            mEmptyDataObserver = new PullLoadMoreRecyclerView.AdapterDataObserver();
+        }
+        if (!isRegister && adapter != null){
+            synchronized(mEmptyDataObserver){
+                adapter.registerAdapterDataObserver(mEmptyDataObserver);
+                isRegister = true;
             }
-            adapter.registerAdapterDataObserver(mEmptyDataObserver);
+        }
+    }
+
+    private void unregisterEmptyDataObserver() {
+        RecyclerView.Adapter<?> adapter = mRecyclerView.getAdapter();
+        if (isRegister && adapter != null && mEmptyDataObserver != null){
+            synchronized(mEmptyDataObserver){
+                adapter.unregisterAdapterDataObserver(mEmptyDataObserver);
+                isRegister = false;
+            }
         }
     }
 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (mEmptyDataObserver != null) {
-            RecyclerView.Adapter<?> adapter = mRecyclerView.getAdapter();
-            if (adapter != null) {
-                adapter.registerAdapterDataObserver(mEmptyDataObserver);
-            }
-        }
+        registerEmptyDataObserver();
     }
 
     /**
@@ -189,10 +207,7 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        RecyclerView.Adapter<?> adapter = mRecyclerView.getAdapter();
-        if (adapter != null) {
-            adapter.unregisterAdapterDataObserver(mEmptyDataObserver);
-        }
+        unregisterEmptyDataObserver();
     }
 
     /**
@@ -321,7 +336,6 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
                     .start();
             invalidate();
             mPullLoadMoreListener.onLoadMore();
-
         }
     }
 
