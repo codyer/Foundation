@@ -1,11 +1,14 @@
 package com.redstar.longguo.ui.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
+import com.redstar.foundation.common.utils.ActivityUtil;
 import com.redstar.longguo.R;
 import com.redstar.longguo.databinding.DemoActivityBinding;
+import com.redstar.longguo.demo.PikerDemoActivity;
 import com.redstar.longguo.presenter.impl.DemoPresenter;
 import com.redstar.longguo.ui.view.activity.base.BaseActivity;
 import com.redstar.longguo.ui.view.fragment.DemoFragment;
@@ -59,6 +62,10 @@ public class DemoActivity extends BaseActivity<DemoPresenter,DemoViewModel, Demo
                 addFragment(R.id.frame,fragment,TAG);
                 break;
             case R.id.getDemo:
+                mPresenter.onGetDemoClick(TAG + view.getTag());
+                break;
+            case R.id.openPicker:
+                ActivityUtil.navigateTo(PikerDemoActivity.class);
                 mPresenter.onGetDemoClick(TAG + view.getTag());
                 break;
         }

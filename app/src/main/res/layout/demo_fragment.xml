@@ -37,6 +37,15 @@
             android:layout_gravity="center"
             android:text="@{vm.info}"/>
 
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:onClick="@{handler.onClick}"
+            android:text="hello"/>
+
+
         <Button
             android:id="@+id/getDemo"
             android:layout_width="wrap_content"

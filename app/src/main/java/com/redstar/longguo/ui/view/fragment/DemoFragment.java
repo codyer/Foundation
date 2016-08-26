@@ -4,13 +4,19 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
+import com.redstar.foundation.ui.widget.pickerview.TimePickerView;
 import com.redstar.longguo.R;
 import com.redstar.longguo.databinding.DemoFragmentBinding;
 import com.redstar.longguo.presenter.impl.DemoPresenter;
 import com.redstar.longguo.ui.view.fragment.base.BaseFragment;
 import com.redstar.longguo.ui.viewmodel.DemoViewModel;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class DemoFragment extends BaseFragment<DemoPresenter, DemoViewModel, DemoFragmentBinding> {
+
+    TimePickerView pvTime1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,26 @@ public class DemoFragment extends BaseFragment<DemoPresenter, DemoViewModel, Dem
         super.onActivityCreated(savedInstanceState);
         getBinding().setVm(getViewModel());
         getBinding().setHandler(this);
+
+        // picker
+        pvTime1 = new TimePickerView(getActivity(), TimePickerView.Type.MONTH);
+        pvTime1.setTime(new Date());
+        pvTime1.setCyclic(false);
+        pvTime1.setCancelable(true);
+        //时间选择后回调
+        pvTime1.setOnTimeSelectListener(new TimePickerView.OnTimeSelectListener() {
+
+            @Override
+            public void onTimeSelect(Date date) {
+                Calendar calendar = Calendar.getInstance();
+                if (date == null)
+                    calendar.setTimeInMillis(System.currentTimeMillis());
+                else
+                    calendar.setTime(date);
+
+                getBinding().time.setText(1+calendar.get(Calendar.MONTH)+"月");
+            }
+        });
     }
 
     @Override
@@ -51,6 +77,9 @@ public class DemoFragment extends BaseFragment<DemoPresenter, DemoViewModel, Dem
                 break;
             case R.id.getDemo:
                 mPresenter.onGetDemoClick(TAG + view.getTag());
+                break;
+            case R.id.time:
+                pvTime1.show();
                 break;
         }
     }
