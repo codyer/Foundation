@@ -113,19 +113,19 @@ public class WheelView extends View {
 
     public WheelView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        textColorOut = getResources().getColor(R.color.picker_view_wheel_view_text_color_out);
-        textColorCenter = getResources().getColor(R.color.picker_view_wheel_view_text_color_center);
-        dividerColor = getResources().getColor(R.color.picker_view_wheel_view_text_color_divider);
+        textColorOut = getResources().getColor(R.color.foundation_picker_view_wheel_view_text_color_out);
+        textColorCenter = getResources().getColor(R.color.foundation_picker_view_wheel_view_text_color_center);
+        dividerColor = getResources().getColor(R.color.foundation_picker_view_wheel_view_text_color_divider);
         //配合customTextSize使用，customTextSize为true才会发挥效果
-        textSize = getResources().getDimensionPixelSize(R.dimen.picker_view_text_size);
-        customTextSize = getResources().getBoolean(R.bool.picker_view_custom_text_size);
+        textSize = getResources().getDimensionPixelSize(R.dimen.foundation_picker_view_text_size);
+        customTextSize = getResources().getBoolean(R.bool.foundation_picker_view_custom_text_size);
         if (attrs != null) {
-            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.picker_view, 0, 0);
-            mGravity = a.getInt(R.styleable.picker_view_picker_view_gravity, Gravity.CENTER);
-            textColorOut = a.getColor(R.styleable.picker_view_picker_view_text_color_out, textColorOut);
-            textColorCenter = a.getColor(R.styleable.picker_view_picker_view_text_color_center, textColorCenter);
-            dividerColor = a.getColor(R.styleable.picker_view_picker_view_divider_color, dividerColor);
-            textSize = a.getDimensionPixelOffset(R.styleable.picker_view_picker_view_text_size, textSize);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.foundation_picker_view, 0, 0);
+            mGravity = a.getInt(R.styleable.foundation_picker_view_foundation_picker_view_gravity, Gravity.CENTER);
+            textColorOut = a.getColor(R.styleable.foundation_picker_view_foundation_picker_view_text_color_out, textColorOut);
+            textColorCenter = a.getColor(R.styleable.foundation_picker_view_foundation_picker_view_text_color_center, textColorCenter);
+            dividerColor = a.getColor(R.styleable.foundation_picker_view_foundation_picker_view_divider_color, dividerColor);
+            textSize = a.getDimensionPixelOffset(R.styleable.foundation_picker_view_foundation_picker_view_text_size, textSize);
         }
         initLoopView(context);
     }

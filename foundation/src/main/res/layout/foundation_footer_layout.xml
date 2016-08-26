@@ -25,6 +25,6 @@
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:text="@string/load_more_text" />
+            android:text="@string/foundation_load_more_text" />
     </LinearLayout>
 </LinearLayout>

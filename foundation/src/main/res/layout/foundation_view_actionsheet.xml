@@ -9,14 +9,14 @@
         android:id="@+id/txt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/actionsheet_top_normal"
+        android:background="@drawable/foundation_actionsheet_top_normal"
         android:gravity="center"
         android:minHeight="45dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:textColor="@color/actionSheetGray"
+        android:textColor="@color/foundation_actionSheetGray"
         android:textSize="13sp"
         android:visibility="gone" />
 
@@ -40,10 +40,10 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/actionsheet_single_selector"
+        android:background="@drawable/foundation_actionsheet_single_selector"
         android:gravity="center"
         android:text="取消"
-        android:textColor="@color/actionSheetBlue"
+        android:textColor="@color/foundation_actionSheetBlue"
         android:textSize="18sp"
         android:textStyle="bold" />
 

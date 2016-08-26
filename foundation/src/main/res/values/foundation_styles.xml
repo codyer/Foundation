@@ -1,7 +1,7 @@
 <resources>
 
     <!--AvatarView-->
-    <declare-styleable name="AvatarView">
+    <declare-styleable name="Foundation.AvatarView">
         <attr name="border_width" format="dimension" />
         <attr name="border_color" format="color" />
         <attr name="shadow_width" format="dimension" />
@@ -9,7 +9,7 @@
     </declare-styleable>
 
     <!-- 自定义仿IOS的AlertDialog的样式 -->
-    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+    <style name="Foundation.AlertDialogStyle" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowIsFloating">true</item>
@@ -20,7 +20,7 @@
     </style>
 
     <!-- 自定义仿IOS的ActionSheet底部Dialog的样式 ，有模糊效果 -->
-    <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
+    <style name="Foundation.ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
 
         <!-- 背景透明 -->
         <item name="android:windowBackground">@android:color/transparent</item>
@@ -36,13 +36,13 @@
         <!-- 半透明 -->
         <item name="android:windowIsTranslucent">true</item>
         <!-- Dialog进入及退出动画 -->
-        <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>
+        <item name="android:windowAnimationStyle">@style/Foundation.ActionSheetDialogAnimation</item>
     </style>
 
     <!-- ActionSheet进出动画 -->
-    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
-        <item name="android:windowEnterAnimation">@anim/action_sheet_dialog_in</item>
-        <item name="android:windowExitAnimation">@anim/action_sheet_dialog_out</item>
+    <style name="Foundation.ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/foundation_action_sheet_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/foundation_action_sheet_dialog_out</item>
     </style>
 
 </resources>

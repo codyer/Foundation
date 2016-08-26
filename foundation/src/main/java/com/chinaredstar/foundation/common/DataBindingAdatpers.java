@@ -19,10 +19,10 @@ public class DataBindingAdatpers {
     @BindingAdapter({"imageUrl"})
     public static void setImageUrl(ImageView view, String imageUrl) {
         if (StringUtil.isEmpty(imageUrl)){
-            view.setImageResource(R.drawable.ic_default);
+            view.setImageResource(R.drawable.foundation_ic_default);
         }else{
             // TODO 根据项目情况修改默认图片和错误图片
-            HttpUtil.loadImage(view,imageUrl, R.drawable.ic_default,R.drawable.ic_default);
+            HttpUtil.loadImage(view,imageUrl, R.drawable.foundation_ic_default,R.drawable.foundation_ic_default);
         }
     }
 }

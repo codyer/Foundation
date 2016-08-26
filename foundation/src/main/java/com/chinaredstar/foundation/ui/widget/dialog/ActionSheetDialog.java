@@ -42,7 +42,7 @@ public class ActionSheetDialog {
     public ActionSheetDialog builder() {
         // 获取Dialog布局
         View view = LayoutInflater.from(context).inflate(
-                R.layout.view_actionsheet, null);
+                R.layout.foundation_view_actionsheet, null);
 
         // 设置Dialog最小宽度为屏幕宽度
         view.setMinimumWidth(display.getWidth());
@@ -61,7 +61,7 @@ public class ActionSheetDialog {
         });
 
         // 定义Dialog布局和参数
-        dialog = new Dialog(context, R.style.ActionSheetDialogStyle);
+        dialog = new Dialog(context, R.style.Foundation_ActionSheetDialogStyle);
         dialog.setContentView(view);
         Window dialogWindow = dialog.getWindow();
         dialogWindow.setGravity(Gravity.LEFT | Gravity.BOTTOM);
@@ -141,24 +141,24 @@ public class ActionSheetDialog {
             // 背景图片
             if (size == 1) {
                 if (showTitle) {
-                    textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                    textView.setBackgroundResource(R.drawable.foundation_actionsheet_bottom_selector);
                 } else {
-                    textView.setBackgroundResource(R.drawable.actionsheet_single_selector);
+                    textView.setBackgroundResource(R.drawable.foundation_actionsheet_single_selector);
                 }
             } else {
                 if (showTitle) {
                     if (i >= 1 && i < size) {
-                        textView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
+                        textView.setBackgroundResource(R.drawable.foundation_actionsheet_middle_selector);
                     } else {
-                        textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                        textView.setBackgroundResource(R.drawable.foundation_actionsheet_bottom_selector);
                     }
                 } else {
                     if (i == 1) {
-                        textView.setBackgroundResource(R.drawable.actionsheet_top_selector);
+                        textView.setBackgroundResource(R.drawable.foundation_actionsheet_top_selector);
                     } else if (i < size) {
-                        textView.setBackgroundResource(R.drawable.actionsheet_middle_selector);
+                        textView.setBackgroundResource(R.drawable.foundation_actionsheet_middle_selector);
                     } else {
-                        textView.setBackgroundResource(R.drawable.actionsheet_bottom_selector);
+                        textView.setBackgroundResource(R.drawable.foundation_actionsheet_bottom_selector);
                     }
                 }
             }

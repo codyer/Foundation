@@ -59,7 +59,7 @@ public class PullLoadMoreRecyclerView extends LinearLayout {
 
     private void initView(Context context) {
         mContext = context;
-        View view = LayoutInflater.from(context).inflate(R.layout.pull_loadmore_layout, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.foundation_pull_loadmore_layout, null);
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshLayout);
         mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_green_dark, android.R.color.holo_blue_dark, android.R.color.holo_orange_dark);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayoutOnRefresh(this));

@@ -17,14 +17,14 @@
 
         <include
             android:id="@+id/footerView"
-            layout="@layout/footer_layout"
+            layout="@layout/foundation_footer_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom" />
 
         <include
             android:id="@+id/emptyView"
-            layout="@layout/empty_layout" />
+            layout="@layout/foundation_empty_layout" />
 
 
     </FrameLayout>

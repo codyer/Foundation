@@ -42,7 +42,7 @@ public class AlertDialog {
     public AlertDialog builder() {
         // 获取Dialog布局
         View view = LayoutInflater.from(context).inflate(
-                R.layout.view_alertdialog, null);
+                R.layout.foundation_view_alertdialog, null);
 
         // 获取自定义Dialog布局中的控件
         lLayout_bg = (LinearLayout) view.findViewById(R.id.lLayout_bg);
@@ -58,7 +58,7 @@ public class AlertDialog {
         img_line.setVisibility(View.GONE);
 
         // 定义Dialog布局和参数
-        dialog = new Dialog(context, R.style.AlertDialogStyle);
+        dialog = new Dialog(context, R.style.Foundation_AlertDialogStyle);
         dialog.setContentView(view);
 
         // 调整dialog背景大小
@@ -146,7 +146,7 @@ public class AlertDialog {
         if (!showPosBtn && !showNegBtn) {
             btn_pos.setText("确定");
             btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.alertdialog_single_selector);
+            btn_pos.setBackgroundResource(R.drawable.foundation_alertdialog_single_selector);
             btn_pos.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -157,20 +157,20 @@ public class AlertDialog {
 
         if (showPosBtn && showNegBtn) {
             btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.alertdialog_right_selector);
+            btn_pos.setBackgroundResource(R.drawable.foundation_alertdialog_right_selector);
             btn_neg.setVisibility(View.VISIBLE);
-            btn_neg.setBackgroundResource(R.drawable.alertdialog_left_selector);
+            btn_neg.setBackgroundResource(R.drawable.foundation_alertdialog_left_selector);
             img_line.setVisibility(View.VISIBLE);
         }
 
         if (showPosBtn && !showNegBtn) {
             btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.alertdialog_single_selector);
+            btn_pos.setBackgroundResource(R.drawable.foundation_alertdialog_single_selector);
         }
 
         if (!showPosBtn && showNegBtn) {
             btn_neg.setVisibility(View.VISIBLE);
-            btn_neg.setBackgroundResource(R.drawable.alertdialog_single_selector);
+            btn_neg.setBackgroundResource(R.drawable.foundation_alertdialog_single_selector);
         }
     }
 

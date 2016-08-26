@@ -56,13 +56,13 @@ public class AvatarView extends ImageView {
     public AvatarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AvatarView);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.Foundation_AvatarView);
         try {
-            mBorderWidth = a.getDimensionPixelSize(R.styleable.AvatarView_border_width, mBorderWidth);
-            mBorderColor = a.getColor(R.styleable.AvatarView_border_color, mBorderColor);
+            mBorderWidth = a.getDimensionPixelSize(R.styleable.Foundation_AvatarView_border_width, mBorderWidth);
+            mBorderColor = a.getColor(R.styleable.Foundation_AvatarView_border_color, mBorderColor);
 
-            mShadowWidth = a.getDimensionPixelSize(R.styleable.AvatarView_shadow_width, mShadowWidth);
-            mShadowColor = a.getColor(R.styleable.AvatarView_shadow_color, mShadowColor);
+            mShadowWidth = a.getDimensionPixelSize(R.styleable.Foundation_AvatarView_shadow_width, mShadowWidth);
+            mShadowColor = a.getColor(R.styleable.Foundation_AvatarView_shadow_color, mShadowColor);
         } finally {
             a.recycle();
         }
