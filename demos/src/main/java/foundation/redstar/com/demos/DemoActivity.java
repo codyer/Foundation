@@ -1,12 +1,12 @@
-package foundation.redstar.com.demos;
+package foundation.chinaredstarer.com.demos;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import foundation.redstar.com.demos.dialog.DialogDemoActivity;
-import foundation.redstar.com.demos.piker.PikerDemoActivity;
+import foundation.chinaredstarer.com.demos.dialog.DialogDemoActivity;
+import foundation.chinaredstarer.com.demos.piker.PikerDemoActivity;
 
 public class DemoActivity extends AppCompatActivity implements View.OnClickListener{
 

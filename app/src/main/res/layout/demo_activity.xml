@@ -2,16 +2,16 @@
 
     <data>
 
-        <import type="com.redstar.foundation.ui.view.EventHandler"/>
+        <import type="android.view.View.OnClickListener"/>
 
-        <import type="com.redstar.longguo.ui.viewmodel.DemoViewModel"/>
-
-        <variable
-            name="handler"
-            type="EventHandler"/>
+        <import type="com.chinaredstarer.longguo.ui.viewmodel.DemoViewModel"/>
 
         <variable
-            name="vm"
+            name="listener"
+            type="OnClickListener"/>
+
+        <variable
+            name="viewModel"
             type="DemoViewModel"/>
     </data>
 <ScrollView android:layout_width="match_parent"
@@ -30,33 +30,33 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:text="@{vm.title}"/>
+            android:text="@{viewModel.title}"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:text="@{vm.info}"/>
+            android:text="@{viewModel.info}"/>
 
         <Button
             android:id="@+id/openPicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{handler.onClick}"
+            android:onClick="@{listener.onClick}"
             android:text="openPicker Test "/>
 
         <Button
             android:id="@+id/getDemo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{handler.onClick}"
+            android:onClick="@{listener.onClick}"
             android:text="activity Login "/>
 
         <Button
             android:id="@+id/addFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{handler.onClick}"
+            android:onClick="@{listener.onClick}"
             android:text="open Fragment "/>
 
         <FrameLayout

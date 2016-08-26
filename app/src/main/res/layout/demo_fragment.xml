@@ -2,9 +2,9 @@
 
     <data>
 
-        <import type="com.redstar.foundation.ui.view.EventHandler"/>
+        <import type="com.chinaredstarer.foundation.ui.EventHandler"/>
 
-        <import type="com.redstar.longguo.ui.viewmodel.DemoViewModel"/>
+        <import type="com.chinaredstarer.longguo.ui.viewmodel.DemoViewModel"/>
 
         <variable
             name="handler"

@@ -1,4 +1,4 @@
-package foundation.redstar.com.demos.dialog;
+package foundation.chinaredstarer.com.demos.dialog;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,12 +7,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.redstar.foundation.ui.widget.dialog.ActionSheetDialog;
-import com.redstar.foundation.ui.widget.dialog.ActionSheetDialog.OnSheetItemClickListener;
-import com.redstar.foundation.ui.widget.dialog.ActionSheetDialog.SheetItemColor;
-import com.redstar.foundation.ui.widget.dialog.AlertDialog;
+import com.chinaredstarer.foundation.ui.widget.dialog.ActionSheetDialog;
+import com.chinaredstarer.foundation.ui.widget.dialog.ActionSheetDialog.OnSheetItemClickListener;
+import com.chinaredstarer.foundation.ui.widget.dialog.ActionSheetDialog.SheetItemColor;
+import com.chinaredstarer.foundation.ui.widget.dialog.AlertDialog;
 
-import foundation.redstar.com.demos.R;
+import foundation.chinaredstarer.com.demos.R;
 
 public class DialogDemoActivity extends Activity implements OnClickListener {
     private Button btn1;

@@ -9,7 +9,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.redstar.foundation"
+        applicationId "com.chinaredstarer.foundation"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.1"
 
     defaultConfig {
-        applicationId "foundation.redstar.com.demos"
+        applicationId "foundation.chinaredstarer.com.demos"
         minSdkVersion 12
         targetSdkVersion 24
         versionCode 1

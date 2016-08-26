@@ -1,4 +1,4 @@
-package foundation.redstar.com.demos;
+package foundation.chinaredstarer.com.demos;
 
 import org.junit.Test;
 
