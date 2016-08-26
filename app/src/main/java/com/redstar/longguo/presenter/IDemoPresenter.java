@@ -1,7 +1,7 @@
 package com.redstar.longguo.presenter;
 
 import com.redstar.foundation.presenter.IPresenter;
-import com.redstar.foundation.ui.view.IView;
+import com.redstar.foundation.ui.IView;
 
 /**
  * Created by cody.yi on 2016/8/4.

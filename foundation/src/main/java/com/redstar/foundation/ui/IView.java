@@ -1,4 +1,4 @@
-package com.redstar.foundation.ui.view;
+package com.redstar.foundation.ui;
 
 /**
  * @author codyer .

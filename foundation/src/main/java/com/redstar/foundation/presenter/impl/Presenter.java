@@ -1,7 +1,7 @@
 package com.redstar.foundation.presenter.impl;
 
 import com.redstar.foundation.presenter.IPresenter;
-import com.redstar.foundation.ui.view.IView;
+import com.redstar.foundation.ui.IView;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;

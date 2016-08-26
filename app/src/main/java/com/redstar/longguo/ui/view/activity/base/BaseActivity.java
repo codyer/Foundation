@@ -7,8 +7,8 @@ import android.os.Bundle;
 
 import com.redstar.foundation.common.utils.LogUtil;
 import com.redstar.foundation.presenter.impl.Presenter;
-import com.redstar.foundation.ui.view.EventHandler;
-import com.redstar.foundation.ui.view.activity.FoundationActivity;
+import com.redstar.foundation.ui.EventHandler;
+import com.redstar.foundation.ui.activity.FoundationActivity;
 import com.redstar.foundation.ui.viewmodel.ViewModel;
 
 import org.antlr.v4.runtime.misc.NotNull;

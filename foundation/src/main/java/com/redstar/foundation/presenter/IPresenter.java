@@ -1,6 +1,6 @@
 package com.redstar.foundation.presenter;
 
-import com.redstar.foundation.ui.view.IView;
+import com.redstar.foundation.ui.IView;
 
 /**
  * Created by cody.yi on 2016/8/5.

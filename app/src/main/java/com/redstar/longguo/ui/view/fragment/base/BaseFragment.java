@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 
 import com.redstar.foundation.common.utils.LogUtil;
 import com.redstar.foundation.presenter.impl.Presenter;
-import com.redstar.foundation.ui.view.EventHandler;
-import com.redstar.foundation.ui.view.fragment.FoundationFragment;
+import com.redstar.foundation.ui.EventHandler;
+import com.redstar.foundation.ui.fragment.FoundationFragment;
 import com.redstar.foundation.ui.viewmodel.ViewModel;
 
 import org.antlr.v4.runtime.misc.NotNull;

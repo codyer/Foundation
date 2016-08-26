@@ -3,7 +3,7 @@ package com.redstar.longguo.presenter.impl;
 
 import com.redstar.foundation.common.Callback;
 import com.redstar.foundation.presenter.impl.Presenter;
-import com.redstar.foundation.ui.view.IView;
+import com.redstar.foundation.ui.IView;
 import com.redstar.longguo.interaction.bean.Demo;
 import com.redstar.longguo.interaction.impl.DemoInteraction;
 import com.redstar.longguo.presenter.IDemoPresenter;

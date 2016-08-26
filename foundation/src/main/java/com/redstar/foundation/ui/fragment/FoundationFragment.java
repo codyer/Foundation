@@ -1,18 +1,15 @@
-package com.redstar.foundation.ui.view.activity;
+package com.redstar.foundation.ui.fragment;
 
-import android.app.Activity;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 
-import com.redstar.foundation.FoundationApplication;
-import com.redstar.foundation.ui.view.IView;
+import com.redstar.foundation.ui.IView;
 import com.redstar.foundation.ui.viewmodel.ViewModel;
 
-public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDataBinding> extends AppCompatActivity implements IView<VM, B> {
+public abstract class FoundationFragment<VM extends ViewModel, B extends ViewDataBinding> extends Fragment implements IView<VM, B> {
     /**
      * Log tag
      */
@@ -22,26 +19,23 @@ public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDat
     private B mBinding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TAG = this.getClass().getSimpleName();
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
-        FoundationApplication.getInstance().setCurrentActivity(this);
     }
 
     @Override
-    protected void onPause() {
-        clearReferences();
+    public void onPause() {
         super.onPause();
     }
 
     @Override
-    protected void onDestroy() {
-        clearReferences();
+    public void onDestroy() {
         super.onDestroy();
     }
 
@@ -52,13 +46,13 @@ public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDat
      * @param fragment        The fragment to be added.
      */
     protected void addFragment(int containerViewId, Fragment fragment, String tag) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
         fragmentTransaction.replace(containerViewId, fragment, tag);
         fragmentTransaction.commit();
     }
 
     public <T extends Fragment> T getFragment(String tag) {
-        return (T) getSupportFragmentManager().findFragmentByTag(tag);
+        return (T) getChildFragmentManager().findFragmentByTag(tag);
     }
 
     @Override
@@ -93,11 +87,5 @@ public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDat
     @Override
     public boolean isBound() {
         return mBinding != null;
-    }
-    private void clearReferences() {
-        Activity currActivity = FoundationApplication.getInstance().getCurrentActivity();
-        if (this.equals(currActivity)) {
-            FoundationApplication.getInstance().setCurrentActivity(null);
-        }
     }
 }
