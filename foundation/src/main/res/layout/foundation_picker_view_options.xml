@@ -7,7 +7,7 @@
     <include
         layout="@layout/foundation_include_picker_view_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/picker_view_top_bar_height" />
+        android:layout_height="@dimen/foundation_picker_view_top_bar_height" />
 
     <LinearLayout
         android:id="@+id/options_picker"
