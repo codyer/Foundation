@@ -1,8 +1,8 @@
-package com.chinaredstarer.foundation.common.utils;
+package com.chinaredstar.foundation.common.utils;
 
 import android.util.Log;
 
-import com.chinaredstarer.foundation.common.Constant;
+import com.chinaredstar.foundation.common.Constant;
 
 /**
  * Created by Cody.yi on 2016/7/13.

@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.pullloadmorerecyclerview;
+package com.chinaredstar.foundation.ui.widget.pullloadmorerecyclerview;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chinaredstarer.foundation.R;
+import com.chinaredstar.foundation.R;
 
 
 /**

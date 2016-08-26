@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils;
+package com.chinaredstar.foundation.common.utils;
 
 import android.app.Activity;
 import android.content.ComponentName;

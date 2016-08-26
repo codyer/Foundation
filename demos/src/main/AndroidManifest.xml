@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="foundation.chinaredstarer.com.demos">
+          package="foundation.chinaredstar.com.demos">
 
     <application
         android:allowBackup="true"
@@ -16,8 +16,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="foundation.chinaredstarer.com.demos.piker.PikerDemoActivity"/>
-        <activity android:name="foundation.chinaredstarer.com.demos.dialog.DialogDemoActivity"/>
+        <activity android:name="foundation.chinaredstar.com.demos.piker.PikerDemoActivity"/>
+        <activity android:name="foundation.chinaredstar.com.demos.dialog.DialogDemoActivity"/>
     </application>
 
 </manifest>

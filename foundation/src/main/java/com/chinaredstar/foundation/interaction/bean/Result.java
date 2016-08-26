@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.interaction.bean;
+package com.chinaredstar.foundation.interaction.bean;
 
 import com.google.gson.annotations.SerializedName;
 

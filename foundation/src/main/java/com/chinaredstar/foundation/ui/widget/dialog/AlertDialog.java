@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.dialog;
+package com.chinaredstar.foundation.ui.widget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chinaredstarer.foundation.R;
+import com.chinaredstar.foundation.R;
 
 /**
  * Created by liuqiang on 10/23/15.

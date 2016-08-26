@@ -1,7 +1,7 @@
-package com.chinaredstarer.foundation.presenter.impl;
+package com.chinaredstar.foundation.presenter.impl;
 
-import com.chinaredstarer.foundation.presenter.IPresenter;
-import com.chinaredstarer.foundation.ui.IView;
+import com.chinaredstar.foundation.presenter.IPresenter;
+import com.chinaredstar.foundation.ui.IView;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;

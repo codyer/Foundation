@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui;
+package com.chinaredstar.foundation.ui;
 
 /**
  * @author codyer .

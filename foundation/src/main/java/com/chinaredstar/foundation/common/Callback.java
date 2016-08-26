@@ -1,6 +1,6 @@
-package com.chinaredstarer.foundation.common;
+package com.chinaredstar.foundation.common;
 
-import com.chinaredstarer.foundation.common.utils.LogUtil;
+import com.chinaredstar.foundation.common.utils.LogUtil;
 
 /**
  * Created by cody.yi on 2016/8/5.

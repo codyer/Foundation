@@ -1,6 +1,6 @@
-package com.chinaredstarer.foundation.presenter;
+package com.chinaredstar.foundation.presenter;
 
-import com.chinaredstarer.foundation.ui.IView;
+import com.chinaredstar.foundation.ui.IView;
 
 /**
  * Created by cody.yi on 2016/8/5.

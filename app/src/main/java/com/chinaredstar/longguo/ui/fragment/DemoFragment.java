@@ -1,15 +1,15 @@
-package com.chinaredstarer.longguo.ui.fragment;
+package com.chinaredstar.longguo.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.chinaredstarer.foundation.ui.widget.pickerview.TimePickerView;
-import com.chinaredstarer.longguo.R;
-import com.chinaredstarer.longguo.databinding.DemoFragmentBinding;
-import com.chinaredstarer.longguo.presenter.impl.DemoPresenter;
-import com.chinaredstarer.longguo.ui.fragment.base.BaseFragment;
-import com.chinaredstarer.longguo.ui.viewmodel.DemoViewModel;
+import com.chinaredstar.foundation.ui.widget.pickerview.TimePickerView;
+import com.chinaredstar.longguo.R;
+import com.chinaredstar.longguo.databinding.DemoFragmentBinding;
+import com.chinaredstar.longguo.presenter.impl.DemoPresenter;
+import com.chinaredstar.longguo.ui.fragment.base.BaseFragment;
+import com.chinaredstar.longguo.ui.viewmodel.DemoViewModel;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -44,8 +44,8 @@ public class DemoFragment extends BaseFragment<DemoPresenter, DemoViewModel, Dem
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getBinding().setVm(getViewModel());
-        getBinding().setHandler(this);
+        getBinding().setViewModel(getViewModel());
+        getBinding().setListener(this);
 
         // picker
         pvTime1 = new TimePickerView(getActivity(), TimePickerView.Type.MONTH);

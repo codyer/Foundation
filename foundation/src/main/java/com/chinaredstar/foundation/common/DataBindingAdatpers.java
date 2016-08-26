@@ -1,10 +1,10 @@
-package com.chinaredstarer.foundation.common;
+package com.chinaredstar.foundation.common;
 
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
-import com.chinaredstarer.foundation.R;
-import com.chinaredstarer.foundation.common.utils.HttpUtil;
-import com.chinaredstarer.foundation.common.utils.StringUtil;
+import com.chinaredstar.foundation.R;
+import com.chinaredstar.foundation.common.utils.HttpUtil;
+import com.chinaredstar.foundation.common.utils.StringUtil;
 
 /**
  * Created by cody.yi on 2016/7/26.

@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget;
+package com.chinaredstar.foundation.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,7 +18,7 @@ import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.chinaredstarer.foundation.R;
+import com.chinaredstar.foundation.R;
 
 /**
  * Created by cody.yi on 2016/7/28.

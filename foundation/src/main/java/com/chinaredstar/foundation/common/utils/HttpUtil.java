@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils;
+package com.chinaredstar.foundation.common.utils;
 
 /**
  * Created by cody.yi on 2016/7/18.
@@ -10,10 +10,10 @@ import android.widget.ImageView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.chinaredstar.foundation.FoundationApplication;
-import com.chinaredstarer.foundation.common.Constant;
-import com.chinaredstarer.foundation.common.utils.http.HttpClient;
-import com.chinaredstarer.foundation.common.utils.http.HttpConnectException;
-import com.chinaredstarer.foundation.interaction.bean.Result;
+import com.chinaredstar.foundation.common.Constant;
+import com.chinaredstar.foundation.common.utils.http.HttpClient;
+import com.chinaredstar.foundation.common.utils.http.HttpConnectException;
+import com.chinaredstar.foundation.interaction.bean.Result;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;

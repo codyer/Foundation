@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview.lib;
+package com.chinaredstar.foundation.ui.widget.pickerview.lib;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,10 +13,10 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.chinaredstarer.foundation.R;
-import com.chinaredstarer.foundation.ui.widget.pickerview.adapter.WheelAdapter;
-import com.chinaredstarer.foundation.ui.widget.pickerview.listener.OnItemSelectedListener;
-import com.chinaredstarer.foundation.ui.widget.pickerview.model.IPickerViewData;
+import com.chinaredstar.foundation.R;
+import com.chinaredstar.foundation.ui.widget.pickerview.adapter.WheelAdapter;
+import com.chinaredstar.foundation.ui.widget.pickerview.listener.OnItemSelectedListener;
+import com.chinaredstar.foundation.ui.widget.pickerview.model.IPickerViewData;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

@@ -1,8 +1,8 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview.utils;
+package com.chinaredstar.foundation.ui.widget.pickerview.utils;
 
 import android.view.Gravity;
 
-import com.chinaredstarer.foundation.R;
+import com.chinaredstar.foundation.R;
 
 
 /**

@@ -1,8 +1,8 @@
-package com.chinaredstarer.longguo.ui.viewmodel;
+package com.chinaredstar.longguo.ui.viewmodel;
 
 import android.databinding.ObservableField;
 
-import com.chinaredstarer.foundation.ui.viewmodel.ViewModel;
+import com.chinaredstar.foundation.ui.viewmodel.ViewModel;
 
 /**
  * Created by cody.yi on 2016/8/24.

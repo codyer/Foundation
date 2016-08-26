@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.dialog;
+package com.chinaredstar.foundation.ui.widget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.chinaredstarer.foundation.R;
+import com.chinaredstar.foundation.R;
 
 import java.util.ArrayList;
 import java.util.List;

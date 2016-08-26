@@ -1,11 +1,11 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview.view;
+package com.chinaredstar.foundation.ui.widget.pickerview.view;
 
 import android.view.View;
 
-import com.chinaredstarer.foundation.R;
-import com.chinaredstarer.foundation.ui.widget.pickerview.adapter.ArrayWheelAdapter;
-import com.chinaredstarer.foundation.ui.widget.pickerview.lib.WheelView;
-import com.chinaredstarer.foundation.ui.widget.pickerview.listener.OnItemSelectedListener;
+import com.chinaredstar.foundation.R;
+import com.chinaredstar.foundation.ui.widget.pickerview.adapter.ArrayWheelAdapter;
+import com.chinaredstar.foundation.ui.widget.pickerview.lib.WheelView;
+import com.chinaredstar.foundation.ui.widget.pickerview.listener.OnItemSelectedListener;
 
 import java.util.ArrayList;
 

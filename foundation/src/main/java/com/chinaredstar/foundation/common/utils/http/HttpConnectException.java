@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils.http;
+package com.chinaredstar.foundation.common.utils.http;
 
 /**
  * Created by cody.yi on 2016/7/21.

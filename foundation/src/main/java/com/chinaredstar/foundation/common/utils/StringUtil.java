@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils;
+package com.chinaredstar.foundation.common.utils;
 
 /**
  * <p>Operations on {@link String} that are

@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.presenter.mapper;
+package com.chinaredstar.foundation.presenter.mapper;
 
 import java.util.ArrayList;
 import java.util.List;

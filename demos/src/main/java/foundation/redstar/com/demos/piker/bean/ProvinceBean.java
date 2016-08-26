@@ -1,6 +1,6 @@
-package foundation.chinaredstarer.com.demos.piker.bean;
+package foundation.chinaredstar.com.demos.piker.bean;
 
-import com.chinaredstarer.foundation.ui.widget.pickerview.model.IPickerViewData;
+import com.chinaredstar.foundation.ui.widget.pickerview.model.IPickerViewData;
 
 /**
  * Created by Sai on 15/11/22.

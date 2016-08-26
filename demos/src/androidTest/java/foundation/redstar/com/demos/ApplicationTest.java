@@ -1,4 +1,4 @@
-package foundation.chinaredstarer.com.demos;
+package foundation.chinaredstar.com.demos;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

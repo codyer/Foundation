@@ -1,16 +1,16 @@
-package com.chinaredstarer.longguo.interaction.impl;
+package com.chinaredstar.longguo.interaction.impl;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.chinaredstarer.foundation.common.Callback;
-import com.chinaredstarer.foundation.common.Constant;
-import com.chinaredstarer.foundation.common.utils.HttpUtil;
-import com.chinaredstarer.foundation.interaction.impl.Interaction;
-import com.chinaredstarer.longguo.interaction.IDemoInteraction;
-import com.chinaredstarer.longguo.interaction.bean.Demo;
+import com.chinaredstar.foundation.common.Callback;
+import com.chinaredstar.foundation.common.Constant;
+import com.chinaredstar.foundation.common.utils.HttpUtil;
+import com.chinaredstar.foundation.interaction.impl.Interaction;
+import com.chinaredstar.longguo.interaction.IDemoInteraction;
+import com.chinaredstar.longguo.interaction.bean.Demo;
 
 import java.util.HashMap;
 import java.util.Map;

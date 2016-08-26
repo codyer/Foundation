@@ -1,15 +1,15 @@
-package com.chinaredstarer.longguo.ui.activity;
+package com.chinaredstar.longguo.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.chinaredstarer.longguo.R;
-import com.chinaredstarer.longguo.databinding.DemoActivityBinding;
-import com.chinaredstarer.longguo.presenter.impl.DemoPresenter;
-import com.chinaredstarer.longguo.ui.activity.base.BaseActivity;
-import com.chinaredstarer.longguo.ui.fragment.DemoFragment;
-import com.chinaredstarer.longguo.ui.viewmodel.DemoViewModel;
+import com.chinaredstar.longguo.R;
+import com.chinaredstar.longguo.databinding.DemoActivityBinding;
+import com.chinaredstar.longguo.presenter.impl.DemoPresenter;
+import com.chinaredstar.longguo.ui.activity.base.BaseActivity;
+import com.chinaredstar.longguo.ui.fragment.DemoFragment;
+import com.chinaredstar.longguo.ui.viewmodel.DemoViewModel;
 
 /**
  * 主要进行生命周期管理以及绑定和属性设置

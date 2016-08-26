@@ -1,9 +1,9 @@
-package com.chinaredstarer.longguo.interaction;
+package com.chinaredstar.longguo.interaction;
 
 import android.support.annotation.NonNull;
 
-import com.chinaredstarer.foundation.common.Callback;
-import com.chinaredstarer.foundation.interaction.IInteraction;
+import com.chinaredstar.foundation.common.Callback;
+import com.chinaredstar.foundation.interaction.IInteraction;
 
 /**
  * Created by cody.yi on 2016/8/5.

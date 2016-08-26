@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils;
+package com.chinaredstar.foundation.common.utils;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

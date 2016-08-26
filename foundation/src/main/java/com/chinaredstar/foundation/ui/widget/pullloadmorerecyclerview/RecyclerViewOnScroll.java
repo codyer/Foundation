@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.pullloadmorerecyclerview;
+package com.chinaredstar.foundation.ui.widget.pullloadmorerecyclerview;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;

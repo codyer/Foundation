@@ -1,4 +1,4 @@
-package com.chinaredstarer.longguo.ui.fragment.base;
+package com.chinaredstar.longguo.ui.fragment.base;
 
 
 import android.databinding.DataBindingUtil;
@@ -9,10 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.chinaredstarer.foundation.common.utils.LogUtil;
-import com.chinaredstarer.foundation.presenter.impl.Presenter;
-import com.chinaredstarer.foundation.ui.fragment.FoundationFragment;
-import com.chinaredstarer.foundation.ui.viewmodel.ViewModel;
+import com.chinaredstar.foundation.common.utils.LogUtil;
+import com.chinaredstar.foundation.presenter.impl.Presenter;
+import com.chinaredstar.foundation.ui.fragment.FoundationFragment;
+import com.chinaredstar.foundation.ui.viewmodel.ViewModel;
 
 import org.antlr.v4.runtime.misc.NotNull;
 

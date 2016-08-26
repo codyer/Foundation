@@ -1,13 +1,13 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview;
+package com.chinaredstar.foundation.ui.widget.pickerview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.chinaredstarer.foundation.R;
-import com.chinaredstarer.foundation.ui.widget.pickerview.view.BasePickerView;
-import com.chinaredstarer.foundation.ui.widget.pickerview.view.WheelTime;
+import com.chinaredstar.foundation.R;
+import com.chinaredstar.foundation.ui.widget.pickerview.view.BasePickerView;
+import com.chinaredstar.foundation.ui.widget.pickerview.view.WheelTime;
 
 import java.text.ParseException;
 import java.util.Calendar;

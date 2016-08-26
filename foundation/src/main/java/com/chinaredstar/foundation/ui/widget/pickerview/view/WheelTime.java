@@ -1,13 +1,13 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview.view;
+package com.chinaredstar.foundation.ui.widget.pickerview.view;
 
 import android.content.Context;
 import android.view.View;
 
-import com.chinaredstarer.foundation.R;
-import com.chinaredstarer.foundation.ui.widget.pickerview.TimePickerView;
-import com.chinaredstarer.foundation.ui.widget.pickerview.adapter.NumericWheelAdapter;
-import com.chinaredstarer.foundation.ui.widget.pickerview.lib.WheelView;
-import com.chinaredstarer.foundation.ui.widget.pickerview.listener.OnItemSelectedListener;
+import com.chinaredstar.foundation.R;
+import com.chinaredstar.foundation.ui.widget.pickerview.TimePickerView;
+import com.chinaredstar.foundation.ui.widget.pickerview.adapter.NumericWheelAdapter;
+import com.chinaredstar.foundation.ui.widget.pickerview.lib.WheelView;
+import com.chinaredstar.foundation.ui.widget.pickerview.listener.OnItemSelectedListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

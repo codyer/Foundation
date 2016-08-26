@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.pullloadmorerecyclerview;
+package com.chinaredstar.foundation.ui.widget.pullloadmorerecyclerview;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 

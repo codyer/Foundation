@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils.http;
+package com.chinaredstar.foundation.common.utils.http;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -23,8 +23,8 @@ import java.util.Map;
 
 import okhttp3.OkHttpClient;
 import com.chinaredstar.foundation.FoundationApplication;
-import com.chinaredstarer.foundation.common.utils.ImageUtil;
-import com.chinaredstarer.foundation.interaction.bean.Result;
+import com.chinaredstar.foundation.common.utils.ImageUtil;
+import com.chinaredstar.foundation.interaction.bean.Result;
 
 /**
  * Created by cody.yi on 2016/7/13.

@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation;
+package com.chinaredstar.foundation;
 
 import org.junit.Test;
 

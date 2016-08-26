@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils;
+package com.chinaredstar.foundation.common.utils;
 
 import com.google.gson.Gson;
 import com.chinaredstar.foundation.FoundationApplication;

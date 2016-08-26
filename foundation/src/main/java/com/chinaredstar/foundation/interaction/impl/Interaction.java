@@ -1,7 +1,7 @@
-package com.chinaredstarer.foundation.interaction.impl;
+package com.chinaredstar.foundation.interaction.impl;
 
-import com.chinaredstarer.foundation.common.utils.HttpUtil;
-import com.chinaredstarer.foundation.interaction.IInteraction;
+import com.chinaredstar.foundation.common.utils.HttpUtil;
+import com.chinaredstar.foundation.interaction.IInteraction;
 
 /**
  * Created by cody.yi on 2016/8/5.

@@ -1,4 +1,4 @@
-package com.chinaredstarer.longguo.ui.activity.base;
+package com.chinaredstar.longguo.ui.activity.base;
 
 
 import android.databinding.DataBindingUtil;
@@ -6,10 +6,10 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.view.View;
 
-import com.chinaredstarer.foundation.common.utils.LogUtil;
-import com.chinaredstarer.foundation.presenter.impl.Presenter;
-import com.chinaredstarer.foundation.ui.activity.FoundationActivity;
-import com.chinaredstarer.foundation.ui.viewmodel.ViewModel;
+import com.chinaredstar.foundation.common.utils.LogUtil;
+import com.chinaredstar.foundation.presenter.impl.Presenter;
+import com.chinaredstar.foundation.ui.activity.FoundationActivity;
+import com.chinaredstar.foundation.ui.viewmodel.ViewModel;
 
 import org.antlr.v4.runtime.misc.NotNull;
 

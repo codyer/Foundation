@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview.lib;
+package com.chinaredstar.foundation.ui.widget.pickerview.lib;
 
 import java.util.TimerTask;
 

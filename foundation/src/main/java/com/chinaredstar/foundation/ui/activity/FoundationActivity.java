@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.activity;
+package com.chinaredstar.foundation.ui.activity;
 
 import android.app.Activity;
 import android.databinding.ViewDataBinding;
@@ -9,8 +9,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.chinaredstar.foundation.FoundationApplication;
-import com.chinaredstarer.foundation.ui.IView;
-import com.chinaredstarer.foundation.ui.viewmodel.ViewModel;
+import com.chinaredstar.foundation.ui.IView;
+import com.chinaredstar.foundation.ui.viewmodel.ViewModel;
 
 public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDataBinding> extends AppCompatActivity implements IView<VM, B> {
     /**

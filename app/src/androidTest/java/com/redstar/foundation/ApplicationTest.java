@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation;
+package com.chinaredstar.foundation;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

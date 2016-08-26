@@ -1,4 +1,4 @@
-package com.chinaredstarer.longguo.interaction.bean;
+package com.chinaredstar.longguo.interaction.bean;
 
 /**
  * Created by cody.yi on 2016/8/4.

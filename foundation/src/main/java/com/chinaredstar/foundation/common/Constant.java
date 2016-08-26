@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common;
+package com.chinaredstar.foundation.common;
 
 import com.chinaredstar.foundation.FoundationApplication;
 
@@ -25,9 +25,9 @@ public class Constant {
      */
     public interface HttpUrl {
         String SERVER = "http://192.168.226.50";
-        String BASE_URL = "api.uc.chinaredstarer.dev";//开发环境
+        String BASE_URL = "api.uc.chinaredstar.dev";//开发环境
 //        String BASE_URL = "api.uc.hxmklmall.cn";//测试环境
-//        String BASE_URL = "api.uc.chinaredstarer.pro";//正式环境
+//        String BASE_URL = "api.uc.chinaredstar.pro";//正式环境
 
         String URL_CHECK_MOBILE_EXIST = BASE_URL + "/partner/isMobileExist";
         String URL_GET_TOKEN = BASE_URL + "/partner/getTokenByClient";

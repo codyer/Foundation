@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.viewmodel;
+package com.chinaredstar.foundation.ui.viewmodel;
 
 import java.io.Serializable;
 

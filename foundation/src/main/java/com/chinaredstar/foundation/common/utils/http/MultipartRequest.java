@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils.http;
+package com.chinaredstar.foundation.common.utils.http;
 
 /**
  * Created by cody.yi on 2016/7/22.
@@ -7,7 +7,7 @@ package com.chinaredstarer.foundation.common.utils.http;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.chinaredstarer.foundation.interaction.bean.Result;
+import com.chinaredstar.foundation.interaction.bean.Result;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

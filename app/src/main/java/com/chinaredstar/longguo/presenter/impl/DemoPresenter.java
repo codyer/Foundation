@@ -1,14 +1,14 @@
-package com.chinaredstarer.longguo.presenter.impl;
+package com.chinaredstar.longguo.presenter.impl;
 
 
-import com.chinaredstarer.foundation.common.Callback;
-import com.chinaredstarer.foundation.presenter.impl.Presenter;
-import com.chinaredstarer.foundation.ui.IView;
-import com.chinaredstarer.longguo.interaction.bean.Demo;
-import com.chinaredstarer.longguo.interaction.impl.DemoInteraction;
-import com.chinaredstarer.longguo.presenter.IDemoPresenter;
-import com.chinaredstarer.longguo.presenter.mapper.DemoModelMapper;
-import com.chinaredstarer.longguo.ui.viewmodel.DemoViewModel;
+import com.chinaredstar.foundation.common.Callback;
+import com.chinaredstar.foundation.presenter.impl.Presenter;
+import com.chinaredstar.foundation.ui.IView;
+import com.chinaredstar.longguo.interaction.bean.Demo;
+import com.chinaredstar.longguo.interaction.impl.DemoInteraction;
+import com.chinaredstar.longguo.presenter.IDemoPresenter;
+import com.chinaredstar.longguo.presenter.mapper.DemoModelMapper;
+import com.chinaredstar.longguo.ui.viewmodel.DemoViewModel;
 
 /**
  * Created by cody.yi on 2016/8/4.

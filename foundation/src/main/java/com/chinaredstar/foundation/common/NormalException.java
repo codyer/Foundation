@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common;
+package com.chinaredstar.foundation.common;
 
 /**
  * Created by cody.yi on 2016/7/26.

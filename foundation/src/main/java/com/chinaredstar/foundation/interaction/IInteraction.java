@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.interaction;
+package com.chinaredstar.foundation.interaction;
 
 /**
  * Created by cody.yi on 2016/8/5.

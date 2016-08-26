@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview.view;
+package com.chinaredstar.foundation.ui.widget.pickerview.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.chinaredstarer.foundation.R;
-import com.chinaredstarer.foundation.ui.widget.pickerview.listener.OnDismissListener;
-import com.chinaredstarer.foundation.ui.widget.pickerview.utils.PickerViewAnimateUtil;
+import com.chinaredstar.foundation.R;
+import com.chinaredstar.foundation.ui.widget.pickerview.listener.OnDismissListener;
+import com.chinaredstar.foundation.ui.widget.pickerview.utils.PickerViewAnimateUtil;
 
 /**
  * Created by Sai on 15/11/22.

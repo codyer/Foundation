@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview.adapter;
+package com.chinaredstar.foundation.ui.widget.pickerview.adapter;
 
 
 /**

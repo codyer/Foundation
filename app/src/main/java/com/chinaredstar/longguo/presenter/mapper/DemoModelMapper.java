@@ -1,8 +1,8 @@
-package com.chinaredstarer.longguo.presenter.mapper;
+package com.chinaredstar.longguo.presenter.mapper;
 
-import com.chinaredstarer.foundation.presenter.mapper.ModelMapper;
-import com.chinaredstarer.longguo.interaction.bean.Demo;
-import com.chinaredstarer.longguo.ui.viewmodel.DemoViewModel;
+import com.chinaredstar.foundation.presenter.mapper.ModelMapper;
+import com.chinaredstar.longguo.interaction.bean.Demo;
+import com.chinaredstar.longguo.ui.viewmodel.DemoViewModel;
 
 import java.util.List;
 

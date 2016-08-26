@@ -1,11 +1,11 @@
-package com.chinaredstarer.foundation.common.utils.http;
+package com.chinaredstar.foundation.common.utils.http;
 
 import android.graphics.Bitmap;
 import android.util.Base64;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
-import com.chinaredstarer.foundation.interaction.bean.Result;
+import com.chinaredstar.foundation.interaction.bean.Result;
 
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;

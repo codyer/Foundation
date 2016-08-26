@@ -4,7 +4,7 @@
 
         <import type="android.view.View.OnClickListener"/>
 
-        <import type="com.chinaredstarer.longguo.ui.viewmodel.DemoViewModel"/>
+        <import type="com.chinaredstar.longguo.ui.viewmodel.DemoViewModel"/>
 
         <variable
             name="listener"
@@ -14,57 +14,60 @@
             name="viewModel"
             type="DemoViewModel"/>
     </data>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:layout_height="wrap_content">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:text="@{viewModel.title}"/>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:text="@{viewModel.info}"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:text="@{viewModel.title}"/>
 
-        <Button
-            android:id="@+id/openPicker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{listener.onClick}"
-            android:text="openPicker Test "/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:text="@{viewModel.info}"/>
 
-        <Button
-            android:id="@+id/getDemo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{listener.onClick}"
-            android:text="activity Login "/>
+            <Button
+                android:id="@+id/openPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{listener.onClick}"
+                android:text="openPicker Test "/>
 
-        <Button
-            android:id="@+id/addFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{listener.onClick}"
-            android:text="open Fragment "/>
+            <Button
+                android:id="@+id/getDemo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{listener.onClick}"
+                android:text="activity Login "/>
 
-        <FrameLayout
-            android:id="@+id/frame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/addFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{listener.onClick}"
+                android:text="open Fragment "/>
 
-        </FrameLayout>
-    </LinearLayout>
-</ScrollView>
+            <FrameLayout
+                android:id="@+id/frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
 </layout>

@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.common.utils.http;
+package com.chinaredstar.foundation.common.utils.http;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;

@@ -1,4 +1,4 @@
-package com.chinaredstarer.foundation.ui.widget.pickerview.lib;
+package com.chinaredstar.foundation.ui.widget.pickerview.lib;
 
 final class OnItemSelectedRunnable implements Runnable {
     final WheelView loopView;
