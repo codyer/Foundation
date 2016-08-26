@@ -4,6 +4,7 @@ import com.redstar.foundation.FoundationApplication;
 
 /**
  * Created by cody.yi on 2016/7/13.
+ *
  */
 public class Constant {
     public final static String PKG_NAME = FoundationApplication.getContext().getPackageName();

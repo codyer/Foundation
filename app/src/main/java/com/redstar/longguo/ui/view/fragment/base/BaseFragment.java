@@ -61,6 +61,7 @@ public abstract class BaseFragment<P extends Presenter,VM extends ViewModel,B ex
         mPresenter.detachView();
         super.onDestroyView();
     }
+
     @Override
     public void showLoading(String msg) {
         LogUtil.d("BaseFragment ++ showLoading");

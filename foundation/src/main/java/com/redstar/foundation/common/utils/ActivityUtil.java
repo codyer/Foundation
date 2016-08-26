@@ -3,6 +3,7 @@ package com.redstar.foundation.common.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import com.redstar.foundation.FoundationApplication;
@@ -26,6 +27,17 @@ public class ActivityUtil {
      */
     public static void navigateTo(@NonNull Class<? extends Activity> targetActivity, @NonNull Intent intent) {
         Activity currentActivity = FoundationApplication.getInstance().getCurrentActivity();
+        navigateTo(currentActivity, targetActivity, intent);
+    }
+
+    /**
+     * @param targetActivity
+     * @param bundle
+     */
+    public static void navigateTo(@NonNull Class<? extends Activity> targetActivity, @NonNull Bundle bundle) {
+        Activity currentActivity = FoundationApplication.getInstance().getCurrentActivity();
+        Intent intent = new Intent();
+        intent.putExtras(bundle);
         navigateTo(currentActivity, targetActivity, intent);
     }
 
