@@ -7,6 +7,10 @@ package com.chinaredstar.foundation.ui;
  */
 public interface IView<VM,B> {
     /**
+     * trans data
+     */
+    void onSuccess(Object tag, VM data);
+    /**
      * show loading message
      *
      * @param msg 需要显示的消息：正在加载。。。

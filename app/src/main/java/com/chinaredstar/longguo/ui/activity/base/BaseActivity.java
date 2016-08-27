@@ -81,4 +81,9 @@ public abstract class BaseActivity<P extends Presenter,VM extends ViewModel,B ex
     public void onProgress(long count, long current) {
         LogUtil.d("BaseActivity ++ onProgress");
     }
+
+    @Override
+    public void onSuccess(Object tag, VM data) {
+        LogUtil.d("BaseActivity ++ onSuccess");
+    }
 }

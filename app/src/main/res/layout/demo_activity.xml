@@ -1,6 +1,9 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <import type="android.view.View"/>
 
         <import type="android.view.View.OnClickListener"/>
 
@@ -15,59 +18,35 @@
             type="DemoViewModel"/>
     </data>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <!--include包含传递viewmodel-->
+        <include
+            layout="@layout/demo_fragment"
+            bind:viewModel="@{viewModel}"/>
+        <!--双向绑定-->
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin">
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="@={viewModel.info}"/>
+        <!--单向绑定 & 控制显示-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="@{viewModel.info}"
+            android:visibility="@{viewModel.visibility?View.VISIBLE:View.GONE}"/>
+        <!-- 事件绑定 -->
+        <Button
+            android:id="@+id/openPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{listener.onClick}"
+            android:text="openPicker Test "/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:text="@{viewModel.title}"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:text="@{viewModel.info}"/>
-
-            <Button
-                android:id="@+id/openPicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="@{listener.onClick}"
-                android:text="openPicker Test "/>
-
-            <Button
-                android:id="@+id/getDemo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="@{listener.onClick}"
-                android:text="activity Login "/>
-
-            <Button
-                android:id="@+id/addFragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="@{listener.onClick}"
-                android:text="open Fragment "/>
-
-            <FrameLayout
-                android:id="@+id/frame"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </FrameLayout>
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 </layout>

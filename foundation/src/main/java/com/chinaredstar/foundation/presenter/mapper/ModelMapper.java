@@ -16,7 +16,7 @@ public abstract class ModelMapper<VM, DM> {
      * @param dataModel 数据模型，对应网络请求获取的bean或entity
      * @return 视图模型，对应data binding中的viewModel
      */
-    protected abstract VM mapper(DM dataModel);
+    public abstract VM mapper(DM dataModel);
 
     /**
      * 将dataModel装饰成viewModel
@@ -24,7 +24,7 @@ public abstract class ModelMapper<VM, DM> {
      * @param dataModel 数据模型，对应网络请求获取的bean或entity
      * @return 视图模型，对应data binding中的viewModel
      */
-    protected abstract VM mapper(VM viewModel,DM dataModel);
+    public abstract VM mapper(VM viewModel,DM dataModel);
 
     /**
      * 将dataModel装饰成viewModel
@@ -32,7 +32,7 @@ public abstract class ModelMapper<VM, DM> {
      * @param dataModels 数据模型，对应网络请求获取的bean或entity
      * @return 视图模型，对应data binding中的viewModel
      */
-    protected List<VM> mapperList(List<DM> dataModels) {
+    public List<VM> mapperList(List<DM> dataModels) {
         List<VM> items = new ArrayList<>();
         int size = dataModels.size();
         for (int i = 0; i < size; i++) {
@@ -46,7 +46,7 @@ public abstract class ModelMapper<VM, DM> {
      * @param dataModels 数据模型，对应网络请求获取的bean或entity
      * @return 视图模型，对应data binding中的viewModel
      */
-    protected List<VM> mapperList(List<VM> viewModels,List<DM> dataModels) {
+    public List<VM> mapperList(List<VM> viewModels,List<DM> dataModels) {
         List<VM> items = new ArrayList<>();
         int size = dataModels.size();
         for (int i = 0; i < size; i++) {
