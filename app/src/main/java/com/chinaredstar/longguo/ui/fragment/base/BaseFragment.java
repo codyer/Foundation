@@ -1,6 +1,7 @@
 package com.chinaredstar.longguo.ui.fragment.base;
 
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -50,15 +51,15 @@ public abstract class BaseFragment<P extends Presenter,VM extends ViewModel,B ex
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onAttach(Context context) {
+        super.onAttach(context);
         mPresenter.attachView(this);
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDetach() {
         mPresenter.detachView();
-        super.onDestroyView();
+        super.onDetach();
     }
 
     @Override

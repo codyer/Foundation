@@ -40,7 +40,10 @@ public abstract class Presenter<VM,B,V extends IView<VM,B>> implements IPresente
 
     @Override
     public V getView() {
-        return mViewRef.get();
+        if (isViewAttached()){
+            return mViewRef.get();
+        }
+        return null;
     }
 
     @Override
