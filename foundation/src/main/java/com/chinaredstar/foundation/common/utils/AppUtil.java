@@ -40,7 +40,7 @@ public class AppUtil {
 
 
     public static String getSessionId() {
-        String sessionId = PreferencesUtil.getInstance().getPreferenceData(FoundationApplication.getContext(), "sessionId");
+        String sessionId = PreferencesUtil.getInstance().getValue("sessionId", "sessionId");
         return StringUtil.isEmpty(sessionId)?"no Session Id":sessionId;
     }
 

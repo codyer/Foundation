@@ -92,7 +92,7 @@ public abstract class BaseFragment<P extends Presenter,VM extends ViewModel,B ex
     }
 
     @Override
-    public void onSuccess(Object tag, VM data) {
-        LogUtil.d("BaseFragment ++ onSuccess");
+    public void onUpdate(Object tag, Object data) {
+        LogUtil.d("BaseFragment ++ onUpdate");
     }
 }

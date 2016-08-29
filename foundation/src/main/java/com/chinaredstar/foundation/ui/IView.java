@@ -6,10 +6,12 @@ package com.chinaredstar.foundation.ui;
  * @date 16/8/22.
  */
 public interface IView<VM,B> {
+
     /**
-     * trans data
+     * update view
      */
-    void onSuccess(Object tag, VM data);
+    void onUpdate(Object tag, Object obj);
+
     /**
      * show loading message
      *
