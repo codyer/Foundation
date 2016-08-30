@@ -1,10 +1,8 @@
 package com.chinaredstar.foundation.common.utils;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 
 import com.chinaredstar.foundation.FoundationApplication;
 
@@ -15,41 +13,79 @@ import com.chinaredstar.foundation.FoundationApplication;
 public class ActivityUtil {
 
     /**
-     * @param targetActivity
+     * startActivity
+     *
+     * @param clazz
      */
-    public static void navigateTo(@NonNull Class<? extends Activity> targetActivity) {
-        navigateTo(targetActivity, new Intent(FoundationApplication.getInstance().getCurrentActivity(), targetActivity));
+    public static void navigateTo(Class<? extends Activity> clazz) {
+        Intent intent = new Intent(FoundationApplication.getInstance().getCurrentActivity(), clazz);
+        FoundationApplication.getInstance().getCurrentActivity().startActivity(intent);
     }
 
     /**
-     * @param targetActivity
-     * @param intent
-     */
-    public static void navigateTo(@NonNull Class<? extends Activity> targetActivity, @NonNull Intent intent) {
-        Activity currentActivity = FoundationApplication.getInstance().getCurrentActivity();
-        navigateTo(currentActivity, targetActivity, intent);
-    }
-
-    /**
-     * @param targetActivity
+     * startActivity with bundle
+     *
+     * @param clazz
      * @param bundle
      */
-    public static void navigateTo(@NonNull Class<? extends Activity> targetActivity, @NonNull Bundle bundle) {
-        Activity currentActivity = FoundationApplication.getInstance().getCurrentActivity();
-        Intent intent = new Intent();
-        intent.putExtras(bundle);
-        navigateTo(currentActivity, targetActivity, intent);
+    public static void navigateTo(Class<? extends Activity> clazz, Bundle bundle) {
+        Intent intent = new Intent(FoundationApplication.getInstance().getCurrentActivity(), clazz);
+        if (null != bundle) {
+            intent.putExtras(bundle);
+        }
+        FoundationApplication.getInstance().getCurrentActivity().startActivity(intent);
     }
 
     /**
-     * Used in onCreate(before onResume) method to ensure current activity is not null.
+     * startActivity then finish
      *
-     * @param context
-     * @param targetActivity
-     * @param intent
+     * @param clazz
      */
-    public static void navigateTo(@NonNull Context context, @NonNull Class<? extends Activity> targetActivity, @NonNull Intent intent) {
-        context.startActivity(intent);
+    public static void navigateToThenKill(Class<? extends Activity> clazz) {
+        Intent intent = new Intent(FoundationApplication.getInstance().getCurrentActivity(), clazz);
+        FoundationApplication.getInstance().getCurrentActivity().startActivity(intent);
+        finish();
+    }
+
+    /**
+     * startActivity with bundle then finish
+     *
+     * @param clazz
+     * @param bundle
+     */
+    public static void navigateToThenKill(Class<? extends Activity> clazz, Bundle bundle) {
+        Intent intent = new Intent(FoundationApplication.getInstance().getCurrentActivity(), clazz);
+        if (null != bundle) {
+            intent.putExtras(bundle);
+        }
+        FoundationApplication.getInstance().getCurrentActivity().startActivity(intent);
+        finish();
+    }
+
+    /**
+     * startActivityForResult
+     *
+     * @param clazz
+     * @param requestCode
+     */
+    public static void navigateToForResult(Class<? extends Activity> clazz, int requestCode) {
+        Intent intent = new Intent(FoundationApplication.getInstance().getCurrentActivity(), clazz);
+        FoundationApplication.getInstance().getCurrentActivity().startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * startActivityForResult with bundle
+     *
+     * @param clazz
+     * @param requestCode
+     * @param bundle
+     */
+    public static void navigateToForResult(Class<? extends Activity> clazz, int requestCode, Bundle bundle) {
+        Intent intent = new Intent(FoundationApplication.getInstance().getCurrentActivity(), clazz);
+        if (null != bundle) {
+            intent.putExtras(bundle);
+        }
+        FoundationApplication.getInstance().getCurrentActivity().startActivityForResult(intent, requestCode);
     }
 
     public static void finish() {
