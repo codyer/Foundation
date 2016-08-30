@@ -1,13 +1,5 @@
 <resources>
 
-    <!--AvatarView-->
-    <declare-styleable name="Foundation.AvatarView">
-        <attr name="border_width" format="dimension" />
-        <attr name="border_color" format="color" />
-        <attr name="shadow_width" format="dimension" />
-        <attr name="shadow_color" format="color" />
-    </declare-styleable>
-
     <!-- 自定义仿IOS的AlertDialog的样式 -->
     <style name="Foundation.AlertDialogStyle" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
