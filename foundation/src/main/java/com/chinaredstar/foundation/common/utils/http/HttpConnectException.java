@@ -2,6 +2,7 @@ package com.chinaredstar.foundation.common.utils.http;
 
 /**
  * Created by cody.yi on 2016/7/21.
+ * http请求异常
  */
 public class HttpConnectException extends RuntimeException {
     private String retCd ;  //异常对应的返回码
