@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import foundation.chinaredstar.com.demos.dialog.DialogDemoActivity;
+import foundation.chinaredstar.com.demos.http.HttpActivity;
 import foundation.chinaredstar.com.demos.piker.PikerDemoActivity;
 
 public class DemoActivity extends AppCompatActivity implements View.OnClickListener{
@@ -17,6 +18,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.timePicker).setOnClickListener(this);
         findViewById(R.id.iosDialog).setOnClickListener(this);
+        findViewById(R.id.testHttp).setOnClickListener(this);
     }
 
     @Override
@@ -29,6 +31,10 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.iosDialog:
                 intent = new Intent(DemoActivity.this, DialogDemoActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.testHttp:
+                intent = new Intent(DemoActivity.this, HttpActivity.class);
                 startActivity(intent);
                 break;
             default:break;
