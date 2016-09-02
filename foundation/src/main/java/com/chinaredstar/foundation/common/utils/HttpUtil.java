@@ -16,7 +16,9 @@ import com.chinaredstar.foundation.common.utils.http.HttpClient;
 import com.chinaredstar.foundation.common.utils.http.HttpConnectException;
 import com.chinaredstar.foundation.interaction.bean.Result;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -365,6 +367,9 @@ public class HttpUtil {
     private static <T> void executeGet(Object tag, String url, Map<String, String> params, Type type, final
     Callback<T> callback) {
         LogUtil.d(url);
+        //get请求重建url，拼接参数
+        url = reBuildUrl(url, params);
+        LogUtil.d("reBuildUrl="+url);
         HttpClient.getInstance().gsonGetRequest(tag, url, params,
                 type, new Response.Listener<Result>() {
                     @Override
@@ -383,6 +388,37 @@ public class HttpUtil {
                 });
     }
 
+    private static String reBuildUrl(String url, Map<String, String> params) {
+        if (params.size() > 0 && StringUtil.isNotEmpty(url)) {
+            //restful
+            if (url.contains("{")) {
+                return reBuildRestFulUrl(url, params);
+            }
+            url += url.contains("?") ? "&" : "?";
+            StringBuilder encodedParams = new StringBuilder();
+            try {
+                for (Map.Entry<String, String> entry : params.entrySet()) {
+                    encodedParams.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+                    encodedParams.append('=');
+                    encodedParams.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+                    encodedParams.append('&');
+                }
+                url += encodedParams.toString();
+                url = url.substring(0, url.length() - 1);
+            } catch (UnsupportedEncodingException uee) {
+                throw new RuntimeException("Encoding not supported: " + "UTF-8", uee);
+            }
+        }
+        return url;
+    }
+
+    private static String reBuildRestFulUrl(String url, Map<String, String> params) {
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            url = url.replace("{" + entry.getKey() + "}", entry.getValue());
+        }
+        return url;
+    }
+
     private static <T> void executePost(Object tag, String url, Map<String, String> params, Type type, final
     Callback<T> callback) {
         LogUtil.d(url);
@@ -391,9 +427,9 @@ public class HttpUtil {
                     @Override
                     public void onResponse(Result result) {
                         if (Constant.HttpCode.SUCCESS.equals(result.getCode())) {
-                            if (StringUtil.isEmpty(result.getData().toString())){
+                            if (StringUtil.isEmpty(result.getData().toString())) {
                                 callback.onSuccess((T) result);
-                            }else{
+                            } else {
                                 callback.onSuccess((T) result.getData());
                             }
                         } else {

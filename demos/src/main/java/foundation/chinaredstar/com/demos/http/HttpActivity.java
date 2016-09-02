@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.chinaredstar.foundation.common.utils.HttpUtil;
 import com.chinaredstar.foundation.common.utils.LogUtil;
+import com.chinaredstar.foundation.common.utils.ToastUtil;
 import com.chinaredstar.foundation.common.utils.http.HttpConnectException;
 import com.chinaredstar.foundation.interaction.bean.Result;
 
@@ -53,16 +54,19 @@ public class HttpActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onSuccess(String data) {
                 LogUtil.d("onSuccess = " + data);
+                ToastUtil.showToast("onSuccess = " + data);
             }
 
             @Override
             public void onFailure(Result<Object> result) {
-                LogUtil.d("onSuccess = " + result.toString());
+                LogUtil.d("onFailure = " + result.toString());
+                ToastUtil.showToast("onFailure = " + result.toString());
             }
 
             @Override
             public void onError(HttpConnectException error) {
-                LogUtil.d("onSuccess = " + error.toString());
+                LogUtil.d("onError = " + error.toString());
+                ToastUtil.showToast("onError = " + error.toString());
             }
         });
     }
