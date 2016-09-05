@@ -1,13 +1,14 @@
 package com.chinaredstar.foundation.common;
 
 import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
-import com.chinaredstar.foundation.R;
-import com.chinaredstar.foundation.common.utils.HttpUtil;
-import com.chinaredstar.foundation.common.utils.StringUtil;
+
+import com.bumptech.glide.Glide;
 
 /**
  * Created by cody.yi on 2016/7/26.
+ * 图片加载绑定
  */
 public class DataBindingAdatpers {
 
@@ -18,11 +19,23 @@ public class DataBindingAdatpers {
 
     @BindingAdapter({"imageUrl"})
     public static void setImageUrl(ImageView view, String imageUrl) {
-        if (StringUtil.isEmpty(imageUrl)){
-            view.setImageResource(R.drawable.foundation_ic_default);
-        }else{
-            // TODO 根据项目情况修改默认图片和错误图片
-            HttpUtil.loadImage(view,imageUrl, R.drawable.foundation_ic_default,R.drawable.foundation_ic_default);
+        if (imageUrl != null) {
+            Glide.with(view.getContext().getApplicationContext()).load(imageUrl).centerCrop().into(view);
+        }
+    }
+
+    @BindingAdapter({"imageUrl", "error"})
+    public static void setImageUrl(ImageView view, String imageUrl, Drawable error) {
+        if (imageUrl != null) {
+            Glide.with(view.getContext().getApplicationContext()).load(imageUrl).error(error).centerCrop().into(view);
+        }
+    }
+
+    @BindingAdapter({"imageUrl", "error", "placeholder"})
+    public static void setImageUrl(ImageView view, String imageUrl, Drawable error, Drawable placeholder) {
+        if (imageUrl != null) {
+            Glide.with(view.getContext().getApplicationContext()).load(imageUrl).error(error).placeholder
+                    (placeholder).centerCrop().into(view);
         }
     }
 }

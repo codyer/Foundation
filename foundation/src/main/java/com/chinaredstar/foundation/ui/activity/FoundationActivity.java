@@ -16,7 +16,7 @@ public abstract class FoundationActivity<VM extends ViewModel, B extends ViewDat
     /**
      * Log tag
      */
-    public static String TAG = null;
+    public String TAG = null;
 
     private VM mViewModel;
     private B mBinding;

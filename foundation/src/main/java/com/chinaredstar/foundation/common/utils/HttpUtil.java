@@ -427,7 +427,7 @@ public class HttpUtil {
                     @Override
                     public void onResponse(Result result) {
                         if (Constant.HttpCode.SUCCESS.equals(result.getCode())) {
-                            if (StringUtil.isEmpty(result.getData().toString())) {
+                            if (result.getData() == null || StringUtil.isEmpty(result.getData().toString())) {
                                 callback.onSuccess((T) result);
                             } else {
                                 callback.onSuccess((T) result.getData());
