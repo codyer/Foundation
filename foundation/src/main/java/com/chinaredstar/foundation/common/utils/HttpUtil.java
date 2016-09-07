@@ -15,6 +15,7 @@ import com.chinaredstar.foundation.common.Constant;
 import com.chinaredstar.foundation.common.utils.http.HttpClient;
 import com.chinaredstar.foundation.common.utils.http.HttpConnectException;
 import com.chinaredstar.foundation.interaction.bean.Result;
+import com.chinaredstar.foundation.interaction.bean.SimpleBean;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
@@ -174,7 +175,7 @@ public class HttpUtil {
                 }, maxWidth, maxHeight, scaleType, decodeConfig,
                 new Response.ErrorListener() {
                     public void onErrorResponse(VolleyError error) {
-                        callback.onError(new HttpConnectException(error.toString()));
+                        callback.onError(new SimpleBean(SimpleBean.Code.REQUEST_ERROR,error.getMessage()));
                     }
                 });
     }
@@ -224,7 +225,7 @@ public class HttpUtil {
     public static void uploadImageMultipart(Object tag, String url,
                                             String imageName, Bitmap bitmap,
                                             Map<String, String> params,
-                                            final Callback<String> callback) {
+                                            final Callback<SimpleBean> callback) {
         //检查参数
         if (checkParameters(tag, url, callback)) return;
 
@@ -240,15 +241,19 @@ public class HttpUtil {
                     @Override
                     public void onResponse(Result result) {
                         if (Constant.HttpCode.SUCCESS.equals(result.getCode())) {
-                            callback.onSuccess((String) result.getData());
+                            if (result.getData() == null || StringUtil.isEmpty(result.getData().toString())) {
+                                callback.onSuccess(new SimpleBean(result));
+                            } else {
+                                LogUtil.d("HttpUtil -> upload image err!");
+                            }
                         } else {
-                            callback.onFailure(result);
+                            callback.onFailure(new SimpleBean(result));
                         }
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        callback.onError(new HttpConnectException(error.toString()));
+                        callback.onError(new SimpleBean(SimpleBean.Code.REQUEST_ERROR,error.getMessage()));
                     }
                 });
     }
@@ -266,7 +271,7 @@ public class HttpUtil {
     public static void uploadImage(Object tag, String url,
                                    String imageName, Bitmap bitmap,
                                    Map<String, String> params,
-                                   final Callback<String> callback) {
+                                   final Callback<SimpleBean> callback) {
         //检查参数
         if (checkParameters(tag, url, callback)) return;
 
@@ -282,15 +287,19 @@ public class HttpUtil {
                     @Override
                     public void onResponse(Result result) {
                         if (Constant.HttpCode.SUCCESS.equals(result.getCode())) {
-                            callback.onSuccess((String) result.getData());
+                            if (result.getData() == null || StringUtil.isEmpty(result.getData().toString())) {
+                                callback.onSuccess(new SimpleBean(result));
+                            } else {
+                                LogUtil.d("HttpUtil -> upload image err!");
+                            }
                         } else {
-                            callback.onFailure(result);
+                            callback.onFailure(new SimpleBean(result));
                         }
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        callback.onError(new HttpConnectException(error.toString()));
+                        callback.onError(new SimpleBean(SimpleBean.Code.REQUEST_ERROR,error.getMessage()));
                     }
                 });
     }
@@ -348,7 +357,7 @@ public class HttpUtil {
             if (Constant.DEBUG) {
                 throw new HttpConnectException("请求参数错误！");
             } else {
-                callback.onError(new HttpConnectException("请求参数错误！"));
+                callback.onError(new SimpleBean(SimpleBean.Code.PARAMETER_ERROR,"请求参数错误！"));
                 return true;
             }
         }
@@ -357,7 +366,7 @@ public class HttpUtil {
             if (Constant.DEBUG) {
                 throw new HttpConnectException("无可用的网络连接,请修改网络连接属性！");
             } else {
-                callback.onError(new HttpConnectException("无可用的网络连接,请修改网络连接属性！"));
+                callback.onError(new SimpleBean(SimpleBean.Code.NETWORK_DISCONNECTED,"无可用的网络连接,请修改网络连接属性！"));
                 return true;
             }
         }
@@ -375,15 +384,19 @@ public class HttpUtil {
                     @Override
                     public void onResponse(Result result) {
                         if (Constant.HttpCode.SUCCESS.equals(result.getCode())) {
-                            callback.onSuccess((T) result.getData());
+                            if (result.getData() == null || StringUtil.isEmpty(result.getData().toString())) {
+                                callback.onSuccess((T) new SimpleBean(result));
+                            } else {
+                                callback.onSuccess((T) result.getData());
+                            }
                         } else {
-                            callback.onFailure(result);
+                            callback.onFailure(new SimpleBean(result));
                         }
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        callback.onError(new HttpConnectException(error.toString()));
+                        callback.onError(new SimpleBean(SimpleBean.Code.REQUEST_ERROR,error.getMessage()));
                     }
                 });
     }
@@ -428,18 +441,18 @@ public class HttpUtil {
                     public void onResponse(Result result) {
                         if (Constant.HttpCode.SUCCESS.equals(result.getCode())) {
                             if (result.getData() == null || StringUtil.isEmpty(result.getData().toString())) {
-                                callback.onSuccess((T) result);
+                                callback.onSuccess((T) new SimpleBean(result));
                             } else {
                                 callback.onSuccess((T) result.getData());
                             }
                         } else {
-                            callback.onFailure(result);
+                            callback.onFailure(new SimpleBean(result));
                         }
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        callback.onError(new HttpConnectException(error.toString()));
+                        callback.onError(new SimpleBean(SimpleBean.Code.REQUEST_ERROR,error.getMessage()));
                     }
                 });
     }
@@ -447,8 +460,8 @@ public class HttpUtil {
     public interface Callback<T> {
         void onSuccess(T data);
 
-        void onFailure(Result<Object> result);
+        void onFailure(SimpleBean result);
 
-        void onError(HttpConnectException error);
+        void onError(SimpleBean error);
     }
 }

@@ -5,8 +5,8 @@ package com.chinaredstar.foundation.common.utils.http;
  * http请求异常
  */
 public class HttpConnectException extends RuntimeException {
-    private String retCd ;  //异常对应的返回码
-    private String msgDes;  //异常对应的描述信息
+    private String mCode;  //异常对应的返回码
+    private String mMessage;  //异常对应的描述信息
 
     public HttpConnectException() {
         super();
@@ -14,20 +14,20 @@ public class HttpConnectException extends RuntimeException {
 
     public HttpConnectException(String message) {
         super(message);
-        msgDes = message;
+        mMessage = message;
     }
 
-    public HttpConnectException(String retCd, String msgDes) {
-        super();
-        this.retCd = retCd;
-        this.msgDes = msgDes;
+    public HttpConnectException(String code, String message) {
+        super(message);
+        this.mCode = code;
+        this.mMessage = message;
     }
 
-    public String getRetCd() {
-        return retCd;
+    public String getCode() {
+        return mCode;
     }
 
-    public String getMsgDes() {
-        return msgDes;
+    public String getMessage() {
+        return mMessage;
     }
 }

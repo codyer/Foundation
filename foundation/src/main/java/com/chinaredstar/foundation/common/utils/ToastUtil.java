@@ -7,6 +7,7 @@ import com.chinaredstar.foundation.FoundationApplication;
 
 /**
  * Created by cody.yi on 2016/8/4.
+ * TODO 统一样式
  */
 public class ToastUtil {
     public static void showToast(String text) {

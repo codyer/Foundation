@@ -8,6 +8,7 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.chinaredstar.foundation.interaction.bean.Result;
+import com.chinaredstar.foundation.interaction.bean.SimpleBean;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -45,7 +46,7 @@ public class MultipartRequest extends  GsonRequest<Result>{
     public MultipartRequest(String url, Map<String, String> params, Map<String, DataPart> byteData,
                             Response.Listener<Result> listener,
                             Response.ErrorListener errorListener) {
-        super(Method.POST, url, params, getType(Result.class, String.class), listener, errorListener);
+        super(Method.POST, url, params, getType(Result.class, SimpleBean.class), listener, errorListener);
         this.mByteData = byteData;
         this.mParams = params;
         this.mListener = listener;

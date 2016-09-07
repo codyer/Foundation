@@ -1,6 +1,7 @@
 package com.chinaredstar.foundation.common;
 
 import com.chinaredstar.foundation.common.utils.LogUtil;
+import com.chinaredstar.foundation.interaction.bean.SimpleBean;
 
 /**
  * Created by cody.yi on 2016/8/5.
@@ -10,23 +11,23 @@ import com.chinaredstar.foundation.common.utils.LogUtil;
 public abstract class Callback<T> {
 
     // 操作执行前
-    public void onBegin(Object obj) {
-        LogUtil.i("Callback onBegin"+obj);
+    public void onBegin(Object tag) {
+        LogUtil.i("Callback onBegin"+tag);
     }
 
     //操作执行结束
-    public void onSuccess(T obj) {
-        LogUtil.i("Callback onSuccess" + obj);
+    public void onSuccess(T bean) {
+        LogUtil.i("Callback onSuccess" + bean);
     }
 
     //执行出错
-    public void onFailure(Object obj) {
-        LogUtil.i("Callback onFailure"+obj);
+    public void onFailure(SimpleBean simpleBean) {
+        LogUtil.i("Callback onFailure"+simpleBean);
     }
 
-    //执行取消
-    public void onCancel(Object obj) {
-        LogUtil.i("Callback onCancelled"+obj);
+    //执行出错并取消
+    public void onError(SimpleBean simpleBean) {
+        LogUtil.i("Callback onError"+simpleBean);
     }
 
     //执行进度

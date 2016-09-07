@@ -6,6 +6,7 @@ import android.util.Base64;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.chinaredstar.foundation.interaction.bean.Result;
+import com.chinaredstar.foundation.interaction.bean.SimpleBean;
 
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
@@ -29,7 +30,7 @@ public class UploadBase64ImageRequest extends GsonRequest<Result> {
                                     Map<String, String> params,
                                     Response.Listener<Result> listener,
                                     Response.ErrorListener errorListener) {
-        super(Method.POST, url, params, getType(Result.class, String.class), listener, errorListener);
+        super(Method.POST, url, params, getType(Result.class, SimpleBean.class), listener, errorListener);
         mImageName = imageName;
         mBitmap = bitmap;
         mParams = params;

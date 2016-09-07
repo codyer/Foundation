@@ -10,7 +10,7 @@ public class MD5Util {
     /***
      * MD5加密 生成32位md5码
      *
-     * @param 待加密字符串
+     * @param inStr 待加密字符串
      * @return 返回32位md5码
      */
     public static String md5Encode(String inStr) throws Exception {
