@@ -6,6 +6,7 @@ import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
+import com.chinaredstar.foundation.common.utils.LogUtil;
 import com.google.gson.Gson;
 
 import java.io.UnsupportedEncodingException;
@@ -57,6 +58,7 @@ public class GsonRequest<T> extends Request<T> {
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
         try {
             String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
+            LogUtil.d("parseNetworkResponse->",jsonString);
             if (mType == null) {
                 //用Gson解析返回Java对象
                 return Response.success(mGson.fromJson(jsonString, mClass),
