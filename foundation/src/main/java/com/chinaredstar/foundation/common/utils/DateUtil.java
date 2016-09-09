@@ -7,6 +7,7 @@ import java.util.Locale;
 
 /**
  * Created by Cody.yi on 2016.8.16.
+ * 时间格式化工具类
  */
 public class DateUtil {
 

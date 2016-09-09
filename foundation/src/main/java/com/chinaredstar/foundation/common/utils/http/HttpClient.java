@@ -58,91 +58,6 @@ public class HttpClient {
     }
 
     /**
-     * @param tag           页面tag
-     * @param url           请求地址
-     * @param listener      成功回调
-     * @param errorListener 失败回调
-     */
-    public StringRequest StrRequest(Object tag, String url, Response.Listener<String> listener, Response
-            .ErrorListener errorListener) {
-        StringRequest request = new StringRequest(url, listener, errorListener);
-        request.setTag(tag);
-        add(request);
-        return request;
-    }
-
-    /**
-     * @param tag           页面tag
-     * @param method        请求方式
-     * @param url           请求地址
-     * @param listener      成功回调
-     * @param errorListener 失败回调
-     */
-    public StringRequest StrRequest(Object tag, int method, String url, Response.Listener<String> listener,
-                                    Response.ErrorListener errorListener) {
-        StringRequest request = new StringRequest(method, url, listener, errorListener);
-        request.setTag(tag);
-        add(request);
-        return request;
-    }
-
-    /**
-     * ImageRequest
-     *
-     * @param tag
-     * @param url
-     * @param listener
-     * @param maxWidth
-     * @param maxHeight
-     * @param scaleType
-     * @param decodeConfig
-     * @param errorListener
-     * @return
-     */
-    public ImageRequest ImageRequest(Object tag, String url, Response.Listener<Bitmap> listener,
-                                     int maxWidth, int maxHeight, ImageView.ScaleType scaleType,
-                                     Bitmap.Config decodeConfig, Response.ErrorListener errorListener) {
-        ImageRequest request = new ImageRequest(url, listener, maxWidth, maxHeight, scaleType,
-                decodeConfig, errorListener);
-        request.setTag(tag);
-        add(request);
-        return request;
-    }
-
-    /**
-     * ImageLoader 图片默认大小
-     *
-     * @param imageView         图片控件
-     * @param imgViewUrl        图片地址
-     * @param defaultImageResId 默认图片id
-     * @param errorImageResId   出错图片id
-     */
-    public void ImageLoaderRequest(ImageView imageView, String imgViewUrl, int defaultImageResId,
-                                   int errorImageResId) {
-        ImageLoader.ImageListener listener = ImageLoader.getImageListener(imageView, defaultImageResId,
-                errorImageResId);
-        mImageLoader.get(imgViewUrl, listener);
-    }
-
-
-    /**
-     * ImageLoader 指定图片大小
-     *
-     * @param imageView         图片控件
-     * @param imgViewUrl        图片地址
-     * @param defaultImageResId 默认图片id
-     * @param errorImageResId   出错图片id
-     * @param maxWidth          最大宽度
-     * @param maxHeight         最大高度
-     */
-    public void ImageLoaderRequest(ImageView imageView, String imgViewUrl, int defaultImageResId,
-                                   int errorImageResId, int maxWidth, int maxHeight) {
-        ImageLoader.ImageListener listener = ImageLoader.getImageListener(imageView, defaultImageResId,
-                errorImageResId);
-        mImageLoader.get(imgViewUrl, listener, maxWidth, maxHeight);
-    }
-
-    /**
      * Get方式1.1：Map参数
      *
      * @param tag           页面tag
@@ -155,33 +70,13 @@ public class HttpClient {
     public <T> GsonRequest<T> gsonGetRequest(Object tag, String url,
                                              Type type, Response.Listener<T> listener,
                                              Response.ErrorListener errorListener) {
-        return newRequestInstance(tag,Request.Method.GET, url, null, type, listener, errorListener);
+        return gsonTypeRequest(tag, Request.Method.GET, url, null, type, listener, errorListener);
     }
 
     public <T> GsonRequest<T> gsonGetRequest(Object tag, String url, Map<String, String> params,
                                              Type type, Response.Listener<T> listener,
                                              Response.ErrorListener errorListener) {
-        return newRequestInstance(tag,Request.Method.GET, url, params, type, listener, errorListener);
-    }
-
-    /**
-     * Get1.2方法
-     *
-     * @param tag           页面tag
-     * @param url           请求地址
-     * @param clazz         返回bean类型
-     * @param listener      成功回调
-     * @param errorListener 失败回调
-     * @param <T>           bean
-     * @return
-     */
-    public <T> GsonRequest<T> gsonGetRequest(Object tag, String url,
-                                             Class<T> clazz, Response.Listener<T> listener,
-                                             Response.ErrorListener errorListener) {
-        GsonRequest<T> request = new GsonRequest<>(Request.Method.GET, url, null, clazz, listener, errorListener);
-        request.setTag(tag);
-        add(request);
-        return request;
+        return gsonTypeRequest(tag, Request.Method.GET, url, params, type, listener, errorListener);
     }
 
     /**
@@ -198,16 +93,34 @@ public class HttpClient {
     public <T> GsonRequest<T> gsonPostRequest(Object tag, String url, Map<String, String> params,
                                               Type type, Response.Listener<T> listener,
                                               Response.ErrorListener errorListener) {
-        return newRequestInstance(tag,Request.Method.POST, url, params, type, listener, errorListener);
+        return gsonTypeRequest(tag, Request.Method.POST, url, params, type, listener, errorListener);
     }
 
     @NonNull
-    private <T> GsonRequest<T> newRequestInstance(Object tag,int method, String url, Map<String, String> params, Type type,
-                                                  Response.Listener<T> listener, Response.ErrorListener errorListener) {
+    public <T> GsonRequest<T> gsonTypeRequest(Object tag, int method, String url, Map<String, String> params,
+                                               Type type,
+                                               Response.Listener<T> listener, Response.ErrorListener errorListener) {
         GsonRequest<T> request = new GsonRequest<>(method, url, params, type, listener, errorListener);
         request.setTag(tag);
         add(request);
         return request;
+    }
+
+    /**
+     * Get1.2方法
+     *
+     * @param tag           页面tag
+     * @param url           请求地址
+     * @param clazz         返回bean类型
+     * @param listener      成功回调
+     * @param errorListener 失败回调
+     * @param <T>           bean
+     * @return
+     */
+    public <T> GsonRequest<T> gsonGetRequest(Object tag, String url,
+                                             Class<T> clazz, Response.Listener<T> listener,
+                                             Response.ErrorListener errorListener) {
+        return gsonClazzRequest(tag, Request.Method.GET, url, null, clazz, listener, errorListener);
     }
 
     /**
@@ -221,14 +134,15 @@ public class HttpClient {
      * @param errorListener 失败回调
      * @return 泛型
      */
-    public <T> GsonRequest<T> gsonPostRequest(Object tag, String url, Map<String, String> params,
-                                              Class<T> clazz, Response.Listener<T> listener,
-                                              Response.ErrorListener errorListener) {
-        GsonRequest<T> request = new GsonRequest<>(Request.Method.POST, url, params, clazz, listener, errorListener);
+    public  <T> GsonRequest<T> gsonClazzRequest(Object tag, int method, String url, Map<String, String> params,
+                                                Class<T> clazz, Response.Listener<T> listener,
+                                                Response.ErrorListener errorListener) {
+        GsonRequest<T> request = new GsonRequest<>(method, url, params, clazz, listener, errorListener);
         request.setTag(tag);
         add(request);
         return request;
     }
+
 
     /**
      * Post方式2：json字符串
@@ -307,7 +221,6 @@ public class HttpClient {
         return request;
     }
 
-
     public MultipartRequest putImageRequest(Object tag, String url, String imageName, Bitmap bitmap,
                                             Map<String, String> params, Response.Listener<Result> listener,
                                             Response.ErrorListener errorListener) {
@@ -317,6 +230,81 @@ public class HttpClient {
         request.setTag(tag);
         add(request);
         return request;
+    }
+
+    /**
+     * @param tag           页面tag
+     * @param url           请求地址
+     * @param listener      成功回调
+     * @param errorListener 失败回调
+     */
+    public StringRequest StrRequest(Object tag, String url, Response.Listener<String> listener, Response
+            .ErrorListener errorListener) {
+        StringRequest request = new StringRequest(url, listener, errorListener);
+        request.setTag(tag);
+        add(request);
+        return request;
+    }
+
+    /**
+     * @param tag           页面tag
+     * @param method        请求方式
+     * @param url           请求地址
+     * @param listener      成功回调
+     * @param errorListener 失败回调
+     */
+    public StringRequest StrRequest(Object tag, int method, String url, Response.Listener<String> listener,
+                                    Response.ErrorListener errorListener) {
+        StringRequest request = new StringRequest(method, url, listener, errorListener);
+        request.setTag(tag);
+        add(request);
+        return request;
+    }
+
+    /**
+     * ImageRequest
+     */
+    public ImageRequest ImageRequest(Object tag, String url, Response.Listener<Bitmap> listener,
+                                     int maxWidth, int maxHeight, ImageView.ScaleType scaleType,
+                                     Bitmap.Config decodeConfig, Response.ErrorListener errorListener) {
+        ImageRequest request = new ImageRequest(url, listener, maxWidth, maxHeight, scaleType,
+                decodeConfig, errorListener);
+        request.setTag(tag);
+        add(request);
+        return request;
+    }
+
+    /**
+     * ImageLoader 图片默认大小
+     *
+     * @param imageView         图片控件
+     * @param imgViewUrl        图片地址
+     * @param defaultImageResId 默认图片id
+     * @param errorImageResId   出错图片id
+     */
+    public void ImageLoaderRequest(ImageView imageView, String imgViewUrl, int defaultImageResId,
+                                   int errorImageResId) {
+        ImageLoader.ImageListener listener = ImageLoader.getImageListener(imageView, defaultImageResId,
+                errorImageResId);
+        mImageLoader.get(imgViewUrl, listener);
+    }
+
+
+    /**
+     * ImageLoader 指定图片大小
+     *
+     * @param imageView         图片控件
+     * @param imgViewUrl        图片地址
+     * @param defaultImageResId 默认图片id
+     * @param errorImageResId   出错图片id
+     * @param maxWidth          最大宽度
+     * @param maxHeight         最大高度
+     */
+    public void ImageLoaderRequest(ImageView imageView, String imgViewUrl, int defaultImageResId,
+                                   int errorImageResId, int maxWidth, int maxHeight) {
+        ImageLoader.ImageListener listener = ImageLoader.getImageListener(imageView, defaultImageResId,
+                errorImageResId);
+        mImageLoader.get(imgViewUrl, listener, maxWidth, maxHeight);
     }
 
     /**

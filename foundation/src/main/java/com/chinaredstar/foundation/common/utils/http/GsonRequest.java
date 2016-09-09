@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * Created by cody.yi on 2016/7/20.
+ * Gson请求封装
  */
 public class GsonRequest<T> extends Request<T> {
 
@@ -23,6 +24,7 @@ public class GsonRequest<T> extends Request<T> {
     private Gson mGson = new Gson();
     private Class<T> mClass;
     private Type mType;
+    private static Map<String, String> mHeaders;//所有的请求用一个头部，只有在登录之后设置，否则没有头部
     private Map<String, String> mParams;//post Params
 
     public GsonRequest(int method, String url, Map<String, String> params, Type type,
@@ -46,8 +48,16 @@ public class GsonRequest<T> extends Request<T> {
     // TODO add token here
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {
-        return super.getHeaders();
+        return mHeaders == null || mHeaders.isEmpty()? super.getHeaders():mHeaders;
     }
+
+    /**
+     * Returns the content type of the POST or PUT body.
+     */
+//    @Override
+//    public String getBodyContentType() {
+//        return "application/json; charset=" + getParamsEncoding();
+//    }
 
     @Override
     protected Map<String, String> getParams() throws AuthFailureError {
@@ -58,7 +68,12 @@ public class GsonRequest<T> extends Request<T> {
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
         try {
             String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
+            LogUtil.d("parseNetworkResponse response.headers->",response.headers.toString());
             LogUtil.d("parseNetworkResponse->",jsonString);
+            if (response.headers.containsKey("x-auth-token")){
+                mHeaders = response.headers;
+                LogUtil.d("mHeaders->",mHeaders.toString());
+            }
             if (mType == null) {
                 //用Gson解析返回Java对象
                 return Response.success(mGson.fromJson(jsonString, mClass),
